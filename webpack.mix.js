@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
+mix;
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +13,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.webpackConfig({
+    plugins: [
+        new BrowserSyncPlugin({
+            files: [
+                'app/**/*',
+                'public/**/*',
+                'resources/views/**/*',
+                'routes/**/*'
+            ]
+        })
+    ]
+}).js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/pages/contacts.scss', 'public/css/pages')
     .sass('resources/sass/app.scss', 'public/css');

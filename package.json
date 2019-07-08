@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "start": "npm run watch",
+        "start": "concurrently \"php artisan serve\" \"npm run watch \" ",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -15,6 +15,7 @@
         "bootstrap": "^4.1.0",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.2.2",
+        "concurrently": "^4.1.1",
         "cross-env": "^5.1",
         "glob": "^7.1.4",
         "jquery": "^3.2",

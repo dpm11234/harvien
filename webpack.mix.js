@@ -1,19 +1,23 @@
-const mix = require('laravel-mix');
+let mix = require('laravel-mix');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const glob = require('glob');
+const path = require('path');
+const sassPath = path.join(__dirname, 'resources/sass/' + '**/**.scss');
+const sassFiles = glob.sync(sassPath);
 
-mix;
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+// mix;
+// /*
+//  |--------------------------------------------------------------------------
+//  | Mix Asset Management
+//  |--------------------------------------------------------------------------
+//  |
+//  | Mix provides a clean, fluent API for defining some Webpack build steps
+//  | for your Laravel application. By default, we are compiling the Sass
+//  | file for the application as well as bundling up all the JS files.
+//  |
+//  */
 
-mix.webpackConfig({
+mix = mix.webpackConfig({
     plugins: [
         new BrowserSyncPlugin({
             files: [
@@ -24,6 +28,14 @@ mix.webpackConfig({
             ]
         })
     ]
-}).js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/pages/contacts.scss', 'public/css/pages')
-    .sass('resources/sass/app.scss', 'public/css');
+}).js('resources/js/app.js', 'public/js');
+
+
+sassFiles.forEach(file => {
+    let arr = file.split('/');
+    arr.pop();
+    let begin = arr.indexOf('sass');
+    arr.splice(0, begin + 1);
+    let toFolder = 'public/css/' + arr.join('/');
+    mix = mix.sass(file, toFolder);
+})

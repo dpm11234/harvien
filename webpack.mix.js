@@ -1,9 +1,13 @@
-let mix = require('laravel-mix');
+let mix                 = require('laravel-mix');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const glob = require('glob');
-const path = require('path');
-const sassPath = path.join(__dirname, 'resources/sass/' + '**/**.scss');
+const glob              = require('glob');
+const path              = require('path');
+
+const sassPath  = path.join(__dirname, 'resources/sass/' + '**/**.scss');
+const jsPath    = path.join(__dirname, 'resources/js/' + '**/**.js');
 const sassFiles = glob.sync(sassPath);
+const jsFiles   = glob.sync(jsPath);
+const excludeJS = ['bootstrap'];
 
 // mix;
 // /*
@@ -29,9 +33,9 @@ mix = mix.webpackConfig({
             notify: false,
         })
     ]
-}).js('resources/js/app.js', 'public/js')
+})
+// .js('resources/js/app.js', 'public/js')
 .copy('node_modules/font-awesome/fonts', 'public/fonts');;
-
 
 sassFiles.forEach(file => {
     let arr = file.split('/');
@@ -43,4 +47,19 @@ sassFiles.forEach(file => {
     arr.splice(0, begin + 1);
     let toFolder = 'public/css/' + arr.join('/');
     mix = mix.sass(file, toFolder);
+});
+
+jsFiles.forEach(file => {
+    let arr = file.split('/');
+    arr.pop();
+
+    let begin = arr.indexOf('js');
+    arr.splice(0, begin + 1);
+    let toFolder = 'public/js/' + arr.join('/');
+    for (let i = 0; i < excludeJS.length; i++) {
+        const fileName = excludeJS[i];
+        toFolder.includes(fileName);
+        return;
+    }
+    mix = mix.js(file, toFolder);
 });

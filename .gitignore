@@ -1,7 +1,5 @@
 /node_modules
-public/
-/public/js/
-/public/css/
+/public/
 /storage/*.key
 /vendor
 .phpunit.result.cache

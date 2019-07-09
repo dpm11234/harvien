@@ -39,4 +39,4 @@ sassFiles.forEach(file => {
     arr.splice(0, begin + 1);
     let toFolder = 'public/css/' + arr.join('/');
     mix = mix.sass(file, toFolder);
-})
+});

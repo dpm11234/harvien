@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layout/navbar.css') }}" rel="stylesheet">
-
+    @yield('css')
     <!-- <script src="{{ asset('js/app.js')}}"></script> -->
     <!-- <link href="source/cover.css" rel="stylesheet"> -->
     <title>Harvee | Technology equitment</title>

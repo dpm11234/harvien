@@ -64,10 +64,6 @@
 
 
             var $nav = $("#nav-scroll");
-            $nav.hide();
-            $nav.css({
-                
-            });
             var nonScroll = $('#non-scroll');
             var animated = false;
             $(window).scroll(() => {

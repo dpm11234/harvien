@@ -76,7 +76,9 @@
       
     </style>
     <!-- Scroll nav -->
-    <div id="nav-scroll" style="top: -60px;
+    <div id="nav-scroll" style="
+                top: -60px;
+                display: none;
                 transition: top 0.25s ease-out;
                 position: fixed;" class="container-fluid px-4 harvee-nav-link harvee-navbar-scroll">
         <div class="row">

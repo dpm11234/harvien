@@ -12,8 +12,10 @@
 */
 
 Route::view('/', 'home');
-
+//#region contact
 Route::view('contact','contact' );
+
+//#endregion contact
 Route::view('about', 'about');
 Route::get('customers', 'CustomersController@list');
 Route::post('customers', 'CustomersController@store');

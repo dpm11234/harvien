@@ -36849,76 +36849,10 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/sass/abstracts/_mixin.scss":
-/*!**********************************************!*\
-  !*** ./resources/sass/abstracts/_mixin.scss ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/abstracts/_variables.scss":
-/*!**************************************************!*\
-  !*** ./resources/sass/abstracts/_variables.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/base/_reset.scss":
-/*!*****************************************!*\
-  !*** ./resources/sass/base/_reset.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/components/_button.scss":
-/*!************************************************!*\
-  !*** ./resources/sass/components/_button.scss ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/layout/_header.scss":
-/*!********************************************!*\
-  !*** ./resources/sass/layout/_header.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/pages/_home.scss":
-/*!*****************************************!*\
-  !*** ./resources/sass/pages/_home.scss ***!
-  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -36949,20 +36883,14 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/abstracts/_mixin.scss ./resources/sass/abstracts/_variables.scss ./resources/sass/app.scss ./resources/sass/base/_reset.scss ./resources/sass/components/_button.scss ./resources/sass/layout/_header.scss ./resources/sass/pages/_home.scss ./resources/sass/pages/contact.scss ./resources/sass/pages/test.scss ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/pages/contact.scss ./resources/sass/pages/test.scss ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\abstracts\_mixin.scss */"./resources/sass/abstracts/_mixin.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\abstracts\_variables.scss */"./resources/sass/abstracts/_variables.scss");
 __webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\base\_reset.scss */"./resources/sass/base/_reset.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\components\_button.scss */"./resources/sass/components/_button.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\layout\_header.scss */"./resources/sass/layout/_header.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\pages\_home.scss */"./resources/sass/pages/_home.scss");
 __webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\pages\contact.scss */"./resources/sass/pages/contact.scss");
 module.exports = __webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\pages\test.scss */"./resources/sass/pages/test.scss");
 

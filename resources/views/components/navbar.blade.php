@@ -11,7 +11,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <img class="harvee-logo" src="images/logo.png" alt="">
+                    <a href="home">
+                        <img class="harvee-logo" src="images/logo.png" alt=""></a>
+
                 </div>
                 <div class="col-lg-4">
                     <div class="container  pt-4 pb-4">
@@ -71,22 +73,26 @@
 
 
     <style>
-    #nav-scroll {
-        display: none;
-        position: fixed;
-        top: -60px;
-        transition: top 0.2s ease-out;
-    }
-    .nav-show {
-        display: block!important;
-        top: 0!important;
-    }
+        #nav-scroll {
+            display: none;
+            position: fixed;
+            top: -60px;
+            transition: top 0.2s ease-out;
+        }
+
+        .nav-show {
+            display: block !important;
+            top: 0 !important;
+        }
     </style>
     <!-- Scroll nav -->
     <div id="nav-scroll" class="container-fluid px-4 harvee-nav-link harvee-navbar-scroll">
         <div class="row">
             <div class="col-auto text-center m-1">
+                <a href="home">
                 <img class="harvee-logo-scroll" src="images/logo.png" alt="">
+                </a>
+               
             </div>
             <div class="col-auto  text-uppercase text-center">
                 <a href="/home" class="nav-link mt-2 ">Home</a>

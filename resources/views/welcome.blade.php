@@ -34,6 +34,7 @@
 
   <script src="{{ asset('js/app.js') }}">
   </script>
+  @stack('script')
   @if (getenv('APP_ENV') === 'local')
   <script id="_bs_script_">
     //<![CDATA[

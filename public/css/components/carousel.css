@@ -1,0 +1,29 @@
+.harvee-carousel .carousel-item {
+  height: 520px;
+}
+
+.harvee-carousel .harvee-slide {
+  width: 100%;
+}
+
+.harvee-carousel .harvee-btn {
+  background: #0e9c6d;
+  color: white;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.harvee-infor {
+  background: #eeeeee;
+}
+
+.harvee-infor .harvee-infor-item {
+  background: #eeeeee;
+  border: white 1px solid;
+}
+
+.harvee-infor .harvee-icon i {
+  color: #0e9c6d;
+  font-size: 50px;
+}
+

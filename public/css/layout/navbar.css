@@ -1,0 +1,97 @@
+.harvee-navbar {
+  background: #ffffff;
+}
+
+.harvee-navbar button:focus {
+  box-shadow: none;
+}
+
+.harvee-navbar .harvee-search-bar input {
+  background: #eeeeee;
+  color: #0e9c6d;
+  height: 40px;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+}
+
+.harvee-navbar .harvee-search-bar input:hover,
+.harvee-navbar .harvee-search-bar input:active,
+.harvee-navbar .harvee-search-bar input:focus {
+  outline: none;
+}
+
+.harvee-navbar .harvee-search-bar label {
+  cursor: pointer;
+  position: relative;
+  right: 30px;
+}
+
+.harvee-navbar .harvee-logo {
+  cursor: pointer;
+  margin-top: 20px;
+  width: 60%;
+}
+
+.harvee-navbar .harvee-logo-scroll {
+  width: 170px;
+}
+
+.harvee-navbar .harvee-hotline {
+  border-right: 1px #eeeeee solid;
+}
+
+.harvee-navbar .harvee-cart {
+  font-size: 40px;
+  color: #0e9c6d;
+}
+
+.harvee-navbar .harvee-cart-detail {
+  position: absolute;
+  right: 50px;
+  height: 500px;
+  width: 300px;
+  display: none;
+  background: white;
+  box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  border-top-width: 2px;
+  z-index: 1;
+  border-top-color: #0e9c6d;
+}
+
+.harvee-navbar .harvee-category-detail {
+  position: absolute;
+  right: -15%;
+  height: 300px;
+  width: 300px;
+  display: none;
+  background: white;
+  box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  border-top-width: 2px;
+  border-top-color: #0e9c6d;
+  z-index: 1;
+}
+
+.harvee-navbar .harvee-nav-link {
+  background: #eeeeee;
+}
+
+.harvee-navbar .harvee-nav-link a {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0e9c6d !important;
+}
+
+.harvee-navbar .harvee-navbar-scroll {
+  background: #ffffff !important;
+  box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.harvee-navbar .harvee-navbar-scroll a {
+  font-size: 15px !important;
+}
+

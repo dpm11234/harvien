@@ -1,0 +1,12 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/abstracts/_mixin.css": "/css/abstracts/_mixin.css",
+    "/css/abstracts/_variables.css": "/css/abstracts/_variables.css",
+    "/css/app.css": "/css/app.css",
+    "/css/base/_reset.css": "/css/base/_reset.css",
+    "/css/components/_button.css": "/css/components/_button.css",
+    "/css/layout/_header.css": "/css/layout/_header.css",
+    "/css/pages/_home.css": "/css/pages/_home.css",
+    "/css/pages/contact.css": "/css/pages/contact.css",
+    "/css/pages/test.css": "/css/pages/test.css"
+}

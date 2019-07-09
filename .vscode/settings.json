@@ -2,4 +2,7 @@
     "blade.format.enable": true,
     "editor.tabSize": 3,
     "phpformatter.composer": true,
+    "files.associations": {
+        "*.blade.php": "blade"
+    }
 }

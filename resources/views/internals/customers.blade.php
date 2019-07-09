@@ -21,17 +21,23 @@
                 <small class="alert alert-danger">{{$emailError}}</small>
                 @endif
             </div>
+            <label for="status">Status</label>
+            <div class="input-group">
+                <select class="form-control" name="status">
+                    <option value="1">Active</option>
+                    <option value="2">Offline</option>
+                </select>
+            </div>
             @csrf
 
             <button type="submit">Add Customer</button>
         </form>
         <ul>
-            @foreach ($data_customers as $customer)
+            @foreach ($data_active_customers as $customer)
             <li>{{ $customer->name }} <span class="text-muted">({{$customer->email}})</span></li>
             @endforeach
         </ul>
 
     </div>
 </div>
-
 @endsection

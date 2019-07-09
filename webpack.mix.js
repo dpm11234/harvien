@@ -25,7 +25,8 @@ mix = mix.webpackConfig({
                 'public/**/*',
                 'resources/views/**/*',
                 'routes/**/*'
-            ]
+            ],
+            notify: true,
         })
     ]
 }).js('resources/js/app.js', 'public/js');

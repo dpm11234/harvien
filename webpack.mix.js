@@ -26,10 +26,11 @@ mix = mix.webpackConfig({
                 'resources/views/**/*',
                 'routes/**/*'
             ],
-            notify: true,
+            notify: false,
         })
     ]
-}).js('resources/js/app.js', 'public/js');
+}).js('resources/js/app.js', 'public/js')
+.copy('node_modules/font-awesome/fonts', 'public/fonts');;
 
 
 sassFiles.forEach(file => {

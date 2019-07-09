@@ -49301,7 +49301,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-
+  
 )
 
 /* hot reload */
@@ -49321,7 +49321,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -49343,10 +49343,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/_variables.scss":
-/*!****************************************!*\
-  !*** ./resources/sass/_variables.scss ***!
-  \****************************************/
+/***/ "./resources/sass/abstracts/_mixin.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/abstracts/_mixin.scss ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/abstracts/_variables.scss":
+/*!**************************************************!*\
+  !*** ./resources/sass/abstracts/_variables.scss ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49361,9 +49372,61 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\n\r\nundefined\r\n       ^\r\n      Can't find stylesheet to import.\n  ╷\n7 │ @import './abstract/variables';\n  │         ^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  stdin 7:9  root stylesheet\r\n      in E:\\data\\php\\harvien\\resources\\sass\\app.scss (line 7, column 9)\n    at runLoaders (E:\\data\\php\\harvien\\node_modules\\webpack\\lib\\NormalModule.js:302:20)\n    at E:\\data\\php\\harvien\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at E:\\data\\php\\harvien\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (E:\\data\\php\\harvien\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at render (E:\\data\\php\\harvien\\node_modules\\sass-loader\\lib\\loader.js:52:13)\n    at Function.$2 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:24920:48)\n    at yL.$2 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:15546:15)\n    at wO.lT (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8704:3)\n    at jh.bs (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8646:25)\n    at jh.cK (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8633:12)\n    at qb.cK (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8416:35)\n    at Object.m (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:1361:19)\n    at E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:4975:51\n    at zf.a (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:1369:71)\n    at zf.$2 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8435:23)\n    at xM.$2 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8430:25)\n    at wO.lT (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8704:3)\n    at jh.bs (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8646:25)\n    at jh.cK (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8633:12)\n    at Object.eval (eval at FR (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:641:8), <anonymous>:3:37)\n    at wO.lT (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (E:\\data\\php\\harvien\\node_modules\\sass\\sass.dart.js:8704:3)");
-=======
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/base/_reset.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/base/_reset.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/components/_button.scss":
+/*!************************************************!*\
+  !*** ./resources/sass/components/_button.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/layout/_header.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/layout/_header.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/layout/navbar.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/layout/navbar.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/pages/_home.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/pages/_home.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
 // removed by extract-text-webpack-plugin
 
 /***/ }),
@@ -49387,22 +49450,27 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
->>>>>>> 5ab32fb53fd9d94a20595f6376be450050c78161
 
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/_variables.scss ./resources/sass/app.scss ./resources/sass/pages/contact.scss ./resources/sass/pages/test.scss ***!
-  \*******************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/abstracts/_mixin.scss ./resources/sass/abstracts/_variables.scss ./resources/sass/app.scss ./resources/sass/base/_reset.scss ./resources/sass/components/_button.scss ./resources/sass/layout/_header.scss ./resources/sass/layout/navbar.scss ./resources/sass/pages/_home.scss ./resources/sass/pages/contact.scss ./resources/sass/pages/test.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\_variables.scss */"./resources/sass/_variables.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\pages\contact.scss */"./resources/sass/pages/contact.scss");
-module.exports = __webpack_require__(/*! C:\Users\deoye\Documents\php\harvien\resources\sass\pages\test.scss */"./resources/sass/pages/test.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\abstracts\_mixin.scss */"./resources/sass/abstracts/_mixin.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\abstracts\_variables.scss */"./resources/sass/abstracts/_variables.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\base\_reset.scss */"./resources/sass/base/_reset.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\components\_button.scss */"./resources/sass/components/_button.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\layout\_header.scss */"./resources/sass/layout/_header.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\layout\navbar.scss */"./resources/sass/layout/navbar.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\pages\_home.scss */"./resources/sass/pages/_home.scss");
+__webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\pages\contact.scss */"./resources/sass/pages/contact.scss");
+module.exports = __webpack_require__(/*! C:\Users\lucie\OneDrive\Desktop\Laravel\Project\hervee\harvien\resources\sass\pages\test.scss */"./resources/sass/pages/test.scss");
 
 
 /***/ })

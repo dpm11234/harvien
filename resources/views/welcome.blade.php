@@ -30,8 +30,6 @@
         @endcomponent -->
     </div>
 
-
-    <div>fuck</div>
     <script src="{{ asset('js/app.js') }}">
     </script>
     @stack('script')
@@ -66,7 +64,10 @@
 
 
             var $nav = $("#nav-scroll");
-            $nav.css('transition', 'top 0.25s ease-out');
+            $nav.hide();
+            $nav.css({
+                
+            });
             var nonScroll = $('#non-scroll');
             var animated = false;
             $(window).scroll(() => {
@@ -74,20 +75,18 @@
                 if ($(window).scrollTop() - distance >= 0) {
                     if (!animated) {
                         animated = true;
+                        $nav.show();
                         $nav.css({
-                            display: 'block',
                             top: 0,
                         })
-                        console.log('show');
 
                     }
                 } else {
                     if (animated) {
+                        $nav.hide();
                         $nav.css({
                             top: -50,
-                            display: 'none',
                         })
-                        console.log('hide');
 
                         animated = false;
                     }

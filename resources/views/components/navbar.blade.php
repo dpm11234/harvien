@@ -73,20 +73,12 @@
 
 
     <style>
-        #nav-scroll {
-            display: none;
-            position: fixed;
-            top: -60px;
-            transition: top 0.2s ease-out;
-        }
-
-        .nav-show {
-            display: block !important;
-            top: 0 !important;
-        }
+      
     </style>
     <!-- Scroll nav -->
-    <div id="nav-scroll" class="container-fluid px-4 harvee-nav-link harvee-navbar-scroll">
+    <div id="nav-scroll" style="top: -60px;
+                transition: top 0.25s ease-out;
+                position: fixed;" class="container-fluid px-4 harvee-nav-link harvee-navbar-scroll">
         <div class="row">
             <div class="col-auto text-center m-1">
                 <a href="home">

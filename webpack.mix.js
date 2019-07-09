@@ -34,7 +34,7 @@ mix = mix.webpackConfig({
         })
     ]
 })
-// .js('resources/js/app.js', 'public/js')
+.js('resources/js/app.js', 'public/js')
 .copy('node_modules/font-awesome/fonts', 'public/fonts');;
 
 sassFiles.forEach(file => {
@@ -49,17 +49,17 @@ sassFiles.forEach(file => {
     mix = mix.sass(file, toFolder);
 });
 
-jsFiles.forEach(file => {
-    let arr = file.split('/');
-    arr.pop();
+// jsFiles.forEach(file => {
+//     let arr = file.split('/');
+//     arr.pop();
 
-    let begin = arr.indexOf('js');
-    arr.splice(0, begin + 1);
-    let toFolder = 'public/js/' + arr.join('/');
-    for (let i = 0; i < excludeJS.length; i++) {
-        const fileName = excludeJS[i];
-        toFolder.includes(fileName);
-        return;
-    }
-    mix = mix.js(file, toFolder);
-});
+//     let begin = arr.indexOf('js');
+//     arr.splice(0, begin + 1);
+//     let toFolder = 'public/js/' + arr.join('/');
+//     for (let i = 0; i < excludeJS.length; i++) {
+//         const fileName = excludeJS[i];
+//         toFolder.includes(fileName);
+//         return;
+//     }
+//     mix = mix.js(file, toFolder);
+// });

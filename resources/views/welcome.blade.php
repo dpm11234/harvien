@@ -9,14 +9,17 @@
     <meta name="author" content="">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layout/navbar.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js')}}"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+    <!-- <script src="{{ asset('js/app.js')}}"></script> -->
     <!-- <link href="source/cover.css" rel="stylesheet"> -->
-    <title>Cover Template for Bootstrap</title>
+    <title>Harvee | Technology equitment</title>
 </head>
 
 <body class="body">
-    @component('components.navbar')
-    @endcomponent
+@include('components.navbar')
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
@@ -29,11 +32,8 @@
         @endcomponent -->
     </div>
 
+
   
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
       <script src="{{ asset('js/app.js') }}">
     </script>
 </body>

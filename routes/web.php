@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('contact', 'routes.contact');
+Route::view('home', 'routes.home');

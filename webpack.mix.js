@@ -35,9 +35,12 @@ mix = mix.webpackConfig({
 
 sassFiles.forEach(file => {
     let arr = file.split('/');
-    arr.pop();
+    var fileName = arr.pop();
+
+    if(fileName && fileName[0] == '_') return;
+
     let begin = arr.indexOf('sass');
     arr.splice(0, begin + 1);
     let toFolder = 'public/css/' + arr.join('/');
     mix = mix.sass(file, toFolder);
-})
+});

@@ -1,0 +1,21 @@
+@import "../abstracts/variables";
+
+.harvee-carousel {
+
+    // z-index: -1;
+
+    .carousel-item {
+        height: 520px;
+    }
+
+    .harvee-slide {
+      width: 100%;
+    }
+
+    .harvee-btn {
+        background: $harvee;
+        color: white;
+        border-radius: 0;
+        text-transform: uppercase;
+    }
+}

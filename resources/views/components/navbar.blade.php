@@ -229,7 +229,7 @@
         var nonScroll = $('#non-scroll');
         $(window).scroll(() => {
                 var distance = nonScroll.offset().top;
-                console.log($(window).scrollTop() - distance  );
+                // console.log($(window).scrollTop() - distance  );
                 
             if ($(window).scrollTop() - distance >=0 ) {
                 if(!$("#nav-scroll").hasClass('nav-show')) 

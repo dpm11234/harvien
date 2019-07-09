@@ -1,4 +1,11 @@
 @extends('welcome')
+@section('css')
+<link href="{{ asset('css/components/carousel.css') }}" rel="stylesheet">
+@endsection
+
+
 @section('content')
-<p>home work!</p>
+@include('components.carousel')
+
+
 @endsection

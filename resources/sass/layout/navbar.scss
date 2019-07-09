@@ -76,6 +76,7 @@
     border: 1px solid #f0f0f0;
     border-top-width: 2px;
     border-top-color: $harvee;
+    z-index: 1;
   }
 
   .harvee-nav-link {
@@ -94,5 +95,6 @@
     }
     background: #ffffff !important;
     box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
 }

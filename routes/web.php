@@ -12,5 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
+
+Route::view('contact', 'routes.contact');
+Route::get('home', function () {
+
+    $images = [
+        [
+            'name' => 'RAM DDR7 MX945',
+            'price' => '$700',
+            'imgUrl' => 'https://cdn.mos.cms.futurecdn.net/PdSTCqTbFBxSpNUFNqGaGB.jpg'
+        ],
+        [
+            'name' => 'Headphones AX17',
+            'price' => '$500',
+            'imgUrl' => 'https://www.wallpapermaiden.com/wallpaper/12879/download/2560x1440/razer-headphones-green.jpgg'
+        ],
+        [
+            'name' => 'ST Keyboard Px17752',
+            'price' => '$300',
+            'imgUrl' => 'https://topthuthuat.com/wp/wp-content/uploads/2019/03/ban-phim-co-nao-tot-3.jpg'
+        ],
+    ];
+
+    return view('routes.home', [
+        'images' => $images
+    ]);
+})->name('home');

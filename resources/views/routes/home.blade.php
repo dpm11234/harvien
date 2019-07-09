@@ -14,7 +14,7 @@
 @push('script')
 <script src="{{ asset('owl/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
 <script>
-    $("#myCarousel").carousel();
+    // $("#myCarousel").carousel();
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,

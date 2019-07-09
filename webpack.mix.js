@@ -1,5 +1,4 @@
 let mix                 = require('laravel-mix');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob              = require('glob');
 const path              = require('path');
 
@@ -21,34 +20,12 @@ const excludeJS = ['bootstrap'];
 //  |
 //  */
 
-mix = mix.webpackConfig({
-    plugins: [
-        new BrowserSyncPlugin({
-            files: [
-                'app/**/*',
-                'public/**/*',
-                'resources/views/**/*',
-                'routes/**/*'
-            ],
-            notify: false,
-        })
-    ]
+mix = mix.browserSync({
+    proxy: '127.0.0.1:8000',
+    notify: false,
 })
-// .js('resources/js/app.js', 'public/js')
+.js('resources/js/app.js', 'public/js')
 .copy('node_modules/font-awesome/fonts', 'public/fonts');;
-
-sassFiles.forEach(file => {
-    let arr = file.split('/');
-    var fileName = arr.pop();
-
-    if(fileName && fileName[0] == '_') return;
-
-    let begin = arr.indexOf('sass');
-    arr.splice(0, begin + 1);
-    let toFolder = 'public/css/' + arr.join('/');
-    mix = mix.sass(file, toFolder);
-});
-
 jsFiles.forEach(file => {
     let arr = file.split('/');
     arr.pop();
@@ -63,3 +40,16 @@ jsFiles.forEach(file => {
     }
     mix = mix.js(file, toFolder);
 });
+
+sassFiles.forEach(file => {
+    let arr = file.split('/');
+    var fileName = arr.pop();
+
+    if(fileName && fileName[0] == '_') return;
+
+    let begin = arr.indexOf('sass');
+    arr.splice(0, begin + 1);
+    let toFolder = 'public/css/' + arr.join('/');
+    mix = mix.sass(file, toFolder);
+});
+

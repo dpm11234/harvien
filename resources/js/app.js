@@ -4,9 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
-const $ = require('jquery/dist/jquery.min');;
-window.jQuery = window.$ = $;
+require('./bootstrap');
+// const $ = require('jquery/dist/jquery.min');;
 // window.Vue = require('vue');
 
 /**

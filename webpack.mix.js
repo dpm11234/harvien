@@ -17,19 +17,11 @@ const sassFiles = glob.sync(sassPath);
 //  |
 //  */
 
-mix = mix.webpackConfig({
-    plugins: [
-        new BrowserSyncPlugin({
-            files: [
-                'app/**/*',
-                'public/**/*',
-                'resources/views/**/*',
-                'routes/**/*'
-            ],
-            notify: false,
-        }),
-    ]
-}).js('resources/js/app.js', 'public/js');
+mix.browserSync({
+    proxy: 'localhost:8000',
+    notify: false,
+})
+.js('resources/js/app.js', 'public/js');
 
 
 sassFiles.forEach(file => {

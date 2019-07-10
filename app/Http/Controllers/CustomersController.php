@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Company;
+
 use Illuminate\Http\Request;
 
 
@@ -10,13 +12,16 @@ class CustomersController extends Controller
 {
     public function list()
     {
-        $activeCustomers = Customer::where('active', 1)->get();
-        $inactiveCustomers = Customer::where('active', 2)->get();
-        return view('internals.customers', [
-            'data_active_customers' => $activeCustomers,
-            'data_active_customers' => $inactiveCustomers,
-            // 'data_customers'        => compact('activeCustomers', 'inactiveCustomers'),
-        ]);
+        $activeCustomers    = Customer::active()->get();
+        $inactiveCustomers  = Customer::inactive()->get();
+        $companies          = Company::all();
+        return view('internals.customers',
+            compact(
+                'activeCustomers',
+                'inactiveCustomers',
+                'companies',
+            )
+        );
     }
 
     public function store()
@@ -24,14 +29,11 @@ class CustomersController extends Controller
         $data = request()->validate([
             'name'      => ['required', 'min:3'],
             'email'     => ['required', 'email'],
-            'status'    => ['required'],
+            'active'    => ['required'],
+            'company_id'   => ['required'],
         ]);
+        Customer::create($data);
 
-        $customer = new Customer;
-        $customer->name     = request('name');
-        $customer->email    = request('email');
-        $customer->active   = request('status');
-        $customer->save();
         return back();
     }
 }

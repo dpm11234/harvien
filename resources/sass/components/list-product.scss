@@ -1,0 +1,28 @@
+@import "../abstracts/variables";
+
+.harvee-list-prod {
+  cursor: pointer;
+  font-size: 18px;
+
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+    border-radius: 0px;
+    border-bottom: 2px solid $harvee;
+    color: $harvee;
+  }
+}
+
+.harvee-list-prod-nav {
+  .active {
+    box-shadow: none !important;
+    border-radius: 0px;
+    border-bottom: 2px solid $harvee;
+    color: $harvee;
+  }
+}
+
+.harvee-line {
+  box-sizing: border-box;
+  border-bottom: 2px solid #dee2e6;
+}

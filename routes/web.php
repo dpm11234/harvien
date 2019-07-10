@@ -17,5 +17,6 @@ Route::view('contact','contact' );
 
 //#endregion contact
 Route::view('about', 'about');
-Route::get('customers', 'CustomersController@list');
+Route::get('customers', 'CustomersController@index');
+Route::get('customers/create', 'CustomersController@create');
 Route::post('customers', 'CustomersController@store');

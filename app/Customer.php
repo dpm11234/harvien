@@ -21,6 +21,13 @@ class Customer extends Model
         return $query->where('active', 2);
     }
 
+    public function getActiveAttribute($attribute)
+    {
+        return [
+            1 => 'Active',
+            2 => 'Inactive',
+        ][$attribute];
+    }
 
     public function company()
     {

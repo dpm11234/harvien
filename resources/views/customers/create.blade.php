@@ -1,12 +1,12 @@
 @extends('layout')
 @section('title')
-Customer List
+Add Customer
 @endsection
 @section('content')
 <div class="row">
     <div class="col-12">
         <h1>Customers</h1>
-        <form action="customers" method="POST" class="pb-5">
+        <form action="/customers" method="POST" class="pb-5">
             <label for="name">Name</label>
             <div class="input-group">
                 <input class="form-control" type="text" name="name">
@@ -41,44 +41,6 @@ Customer List
 
             <button type="submit">Add Customer</button>
         </form>
-        {{-- <ul>
-            @foreach ($data_active_customers as $customer)
-            <li>{{ $customer->name }} <span class="text-muted">({{$customer->email}})</span></li>
-        @endforeach
-        </ul> --}}
-    </div>
-</div>
-<div class="row justify-content-around">
-    <div class="col-5">
-        <h3>Active Customers</h3>
-        <ul class="w-100">
-            @foreach ($activeCustomers as $customer)
-            <li> {{$customer->name}}</li> <span class="text-muted">{{$customer->company->name}}</span>
-            @endforeach
-        </ul>
-    </div>
-    <div class="col-5">
-        <h3>Inactive Customers</h3>
-        <ul class="w-100">
-            @foreach ($inactiveCustomers as $customer)
-            <li> {{$customer->name}}</li>
-            <span class="text-muted">{{$customer->company->name}}</span>
-            @endforeach
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        @foreach($companies as $company)
-        <h3>{{$company->name}}</h3>
-        <ul>
-            @foreach ($company->customers as $customer)
-            <li>{{$customer->name}}</li>
-            @endforeach
-        </ul>
-        @endforeach
-
     </div>
 </div>
 @endsection

@@ -3,17 +3,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
+                    <a href="home">
+                        <img class="harvee-logo" src="{{asset('storage/images/logo.png')}}" alt=""></a>
+
+                </div>
+                <div class="col-lg-4">
                     <div class="harvee-search-bar pt-4 pb-4 m-2 text-center">
                         <input type="text" class="p-2" name="search-bar" placeholder="Search...">
                         <label for="search-bar">
                             <i class="fa fa-search"></i>
                         </label>
                     </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <a href="home">
-                        <img class="harvee-logo" src="images/logo.png" alt=""></a>
-
                 </div>
                 <div class="col-lg-4">
                     <div class="container  pt-4 pb-4">
@@ -73,7 +73,7 @@
 
 
     <style>
-      
+
     </style>
     <!-- Scroll nav -->
     <div id="nav-scroll" style="
@@ -84,9 +84,9 @@
         <div class="row">
             <div class="col-auto text-center m-1">
                 <a href="home">
-                <img class="harvee-logo-scroll" src="images/logo.png" alt="">
+                    <img class="harvee-logo-scroll" src="{{asset('storage/images/logo.png')}}" alt="">
                 </a>
-               
+
             </div>
             <div class="col-auto  text-uppercase text-center">
                 <a href="/home" class="nav-link mt-2 ">Home</a>

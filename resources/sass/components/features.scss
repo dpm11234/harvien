@@ -1,0 +1,54 @@
+@import "../abstracts/variables";
+
+.harvee-feature {
+  .harvee-feature-icon {
+    font-size: 50px;
+    color: $harvee;
+  }
+
+  .harvee-feature-btn {
+    color: #05131c;
+    background-color: transparent;
+    border-color: #cfcfcf;
+    border-radius: 0;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background: $harvee;
+      color: #efefef;
+    }
+  }
+}
+
+.harvee-banner {
+  height: 300px;
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(32, 32, 32, 0.4);
+  }
+
+  .harvee-feature-btn {
+    color: #fff;
+    background-color: $harvee;
+    border-color: $harvee;
+    box-shadow: none;
+    border-radius: 0;
+
+    &:hover {
+      background-color: #0dc98a;
+      transition-duration: 0.2s;
+    }
+  }
+}

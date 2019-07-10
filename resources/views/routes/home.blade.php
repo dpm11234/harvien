@@ -3,6 +3,7 @@
 <link href="{{ asset('css/components/carousel.css') }}" rel="stylesheet">
 <link href="{{ asset('css/components/product-card.css') }}" rel="stylesheet">
 <link href="{{ asset('css/components/list-product.css') }}" rel="stylesheet">
+<link href="{{ asset('css/components/features.css') }}" rel="stylesheet">
 <link href="{{ asset('owl/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
 <link href="{{ asset('owl/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
 <!-- <link href="{{ asset('bs-rating/bootstrap-rating.css')}}" rel="stylesheet"> -->
@@ -12,6 +13,7 @@
 @section('content')
 @include('components.carousel')
 @include('components.list-product')
+@include('components.features')
 @endsection
 
 @push('script')

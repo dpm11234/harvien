@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/components/carousel.css": "/css/components/carousel.css",
+    "/css/components/features.css": "/css/components/features.css",
     "/css/components/list-product.css": "/css/components/list-product.css",
     "/css/components/product-card.css": "/css/components/product-card.css",
     "/css/layout/navbar.css": "/css/layout/navbar.css",

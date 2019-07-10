@@ -55,9 +55,8 @@
   }
 
   .harvee-card-prod-name {
-    color: $harvee !important;
-
     a {
+      color: $harvee !important;
       &:hover {
         text-decoration: none !important;
         font-weight: bold;
@@ -70,5 +69,6 @@
     background-color: #f4f4f4;
     border: 1px solid #d8d8d6;
     color: #302e2a;
+    border-radius: 0;
   }
 }

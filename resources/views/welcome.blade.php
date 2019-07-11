@@ -29,9 +29,9 @@
         @component('components.footer')
         @endcomponent
     </div>
-
-    <script src="{{ asset('js/app.js') }}">
-    </script>
+    <script src="{{ asset('/js/manifest.js')}}"></script>
+    <script src="{{ asset('/js/vendor.js')}}"></script>
+    <script src="{{ asset('/js/app.js')}}"></script>
     @stack('script')
 
     <script>
@@ -81,8 +81,8 @@
                     if (animated) {
                         $nav.hide();
                         $nav.css({
-                            top: -60,
-                        })
+                            top: -60
+                        }, )
 
                         animated = false;
                     }

@@ -6,7 +6,7 @@ const sassPath  = path.join(__dirname, 'resources/sass/' + '**/**.scss');
 const jsPath    = path.join(__dirname, 'resources/js/' + '**/**.js');
 const sassFiles = glob.sync(sassPath);
 const jsFiles   = glob.sync(jsPath);
-const excludeJS = ['bootstrap'];
+const excludeJS = ['app', 'bootstrap'];
 
 // mix;
 // /*
@@ -25,7 +25,8 @@ mix = mix.browserSync({
     notify: false,
 })
 .js('resources/js/app.js', 'public/js')
-.copy('node_modules/font-awesome/fonts', 'public/fonts');;
+.extract(['jquery', 'bootstrap', 'axios', 'popper.js'])
+// .copy('node_modules/font-awesome/fonts', 'public/fonts');;
 jsFiles.forEach(file => {
     let arr = file.split('/');
     arr.pop();
@@ -38,7 +39,7 @@ jsFiles.forEach(file => {
         toFolder.includes(fileName);
         return;
     }
-    mix = mix.js(file, toFolder);
+    mix.js(file, toFolder);
 });
 
 sassFiles.forEach(file => {

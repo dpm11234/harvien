@@ -12,8 +12,9 @@
 
 @section('content')
 @include('components.carousel')
-@include('components.list-product')
+@include('components.list-product', ['title' => 'hot features'])
 @include('components.features')
+@include('components.list-product', ['title' => 'Recommend of you'])
 @endsection
 
 @push('script')

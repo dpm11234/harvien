@@ -129,7 +129,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-sm harvee-nav-mobile d-block d-sm-none w-100">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/home">
             <img class="harvee-logo-scroll" src="{{asset('storage/images/logo.png')}}" alt="">
         </a>
         <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,7 +169,7 @@
                     <a class="nav-link" href="#">Shipment</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
 
             </ul>

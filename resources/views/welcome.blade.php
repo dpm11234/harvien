@@ -81,7 +81,7 @@
                     if (animated) {
                         $nav.hide();
                         $nav.css({
-                            top: -50,
+                            top: -60,
                         })
 
                         animated = false;

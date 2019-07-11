@@ -7,6 +7,7 @@
     "/css/components/product-card.css": "/css/components/product-card.css",
     "/css/layout/footer.css": "/css/layout/footer.css",
     "/css/layout/navbar.css": "/css/layout/navbar.css",
+    "/css/pages/category.css": "/css/pages/category.css",
     "/css/pages/contact.css": "/css/pages/contact.css",
     "/css/pages/test.css": "/css/pages/test.css"
 }

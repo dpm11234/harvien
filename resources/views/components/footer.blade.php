@@ -80,18 +80,18 @@
             </div>
         </div>
         <div class="row harvee-footer-bottom pt-4">
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="copy-right">
                     Copyright © 2019 <span>Gocodee</span>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="row">
                     <div class="col-lg-8 d-flex justify-content-between">
                         <img src="{{ asset('storage/images/payments.png') }}" alt="">
                     </div>
                     <div class="col-lg-4">
-                        <div class="social">
+                        <div class="social text-right">
                             <a href="#">
                                 <i class="fa fa-facebook-f"></i>
                             </a>

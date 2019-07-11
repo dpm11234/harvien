@@ -9,8 +9,8 @@
 <div class="harvee-category py-4 my-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 p-0">
-                <div class="col-lg-12">
+            <div class="col-lg-3">
+                <div class="col-lg-12 p-0">
                     <div id="accordion-1" class="harvee-accordion">
                         <div class="card">
                             <div class="card-header mt-2" id="fashion">
@@ -134,6 +134,9 @@
 
                 <div class="harvee-category-carousel my-4 ">
                     <div class="container">
+                        <h5 class="text-uppercase">
+                            features product
+                        </h5>
                         <div class="owl-carousel owl-theme">
                             <div class="item">
                                 @include('components.product-card')
@@ -152,7 +155,24 @@
 
             <div class="col-lg-9">
                 <div class="col-lg-12">
-                    quanr cao banner
+                    <div class="harvee-banner mb-4" style="background-image: url('{{ asset('storage/images/iw.jpg')}}');">
+                        <div class="container h-100">
+                            <div class="row harvee-banner-shadow h-100">
+                                <div class="col-lg-12 my-auto">
+                                    <h1 class="text-uppercase font-weight-bold">
+                                        CHECK OUT OVER 200+
+                                    </h1>
+                                    <h2 class="text-uppercase">
+
+                                        COASTS & JACKETS FOR WOMAN
+                                    </h2>
+                                    <button class="btn text-uppercase harvee-feature-btn font-weight-bold px-4 my-4">
+                                        shop now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-12">
                     catechinh

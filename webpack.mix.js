@@ -21,7 +21,7 @@ mix.browserSync({
     notify: false,
 })
     .js('resources/js/app.js', 'public/js')
-    // .extract([`node_modules/jquery/dist/jquery.min`, `axios`]);
+    .extract(['jquery', 'bootstrap', `axios`]);
 
 
 sassFiles.forEach(file => {

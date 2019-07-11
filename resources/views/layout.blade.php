@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-    <script src="{{ asset('/js/app.js')}}"></script>
 </head>
 
 <body>
@@ -15,13 +14,16 @@
     <div class="container">
         @yield('content')
     </div>
-    @if (getenv('APP_ENV') === 'local')
+    <script src="{{ asset('/js/manifest.js')}}"></script>
+    <script src="{{ asset('/js/vendor.js')}}"></script>
+    <script src="{{ asset('/js/app.js')}}"></script>
+    {{-- @if (getenv('APP_ENV') === 'local')
     <script id="__bs_script__">
         //<![CDATA[
           document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.6'><\/script>".replace("HOST", location.hostname));
               //]]>
     </script>
-    @endif
+    @endif --}}
 </body>
 
 </html>

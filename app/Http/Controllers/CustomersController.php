@@ -14,7 +14,8 @@ class CustomersController extends Controller
     {
         $customers = Customer::all();
 
-        return view('customers.index',
+        return view(
+            'customers.index',
             compact(
                 'customers',
             )
@@ -30,19 +31,20 @@ class CustomersController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'name'      => ['required', 'min:3'],
-            'email'     => ['required', 'email'],
-            'active'    => ['required'],
-            'company_id'   => ['required'],
+            'name'          => ['required', 'min:3'],
+            'email'         => ['required', 'email'],
+            'active'        => ['required'],
+            'company_id'    => ['required'],
         ]);
         Customer::create($data);
 
         return redirect('customers');
     }
 
-    public function show($customer)
+    public function show(Customer $customer)
     {
-        $customer = Customer::find($customer);
+        $c='customer';
+        // $customer = Customer::where('id', $id)->firstOrFail();
         return view('customers.show', compact('customer'));
     }
 }

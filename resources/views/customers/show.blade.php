@@ -1,9 +1,8 @@
 @extends('layout')
-@section('title')
-Detail Customer - {{$customer->name}}
-@endsection
+@section('title', 'Detail Customer - {{$customer->name}}')
 
 @section('content')
+<h3 class="w-100">Detail for {{$customer->name}}</h3>
 <div class="row">
     <div class="col-12">
         <p><strong>Name</strong> {{$customer->name}}</p>

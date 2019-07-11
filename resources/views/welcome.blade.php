@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layout/navbar.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/layout/footer.css') }}">
     @yield('css')
     <!-- <script src="{{ asset('js/app.js')}}"></script> -->
     <!-- <link href="source/cover.css" rel="stylesheet"> -->
@@ -21,19 +22,18 @@
 
     <div class="cover-container d-flex h-100 mx-auto flex-column">
 
-
-
+        
         @yield('content')
         <!-- @yield('contact') -->
 
-        <!-- @component('components.footer')
-        @endcomponent -->
+        @component('components.footer')
+        @endcomponent
     </div>
 
     <script src="{{ asset('js/app.js') }}">
     </script>
     @stack('script')
-   
+
     <script>
         $(document).ready(() => {
             let addToggle = (btn, queryTarget) => {

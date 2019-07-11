@@ -43,3 +43,4 @@ Route::get('home', function () {
         'title' => $title
     ]);
 })->name('home');
+Route::get('category', 'PageController@getCategory');

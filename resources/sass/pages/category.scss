@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+
+.harvee-accordion {
+  border: 1px solid #efefef;
+
+  button {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .line {
+    border-bottom: 1px solid #efefef;
+  }
+}
+
+.harvee-btn-filter {
+  border-radius: 0;
+}
+
+.harvee-category-carousel {
+  border: 1px solid #efefef;
+
+  .harvee-card-header {
+    img {
+      width: 100%;
+    }
+  }
+
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    display: none;
+  }
+
+  .harvee-card-btn {
+    border: 1px solid #d8d8d6;
+    &:hover {
+      background-color: $harvee;
+      border: 1px solid #d8d8d6;
+      color: #f4f4f4;
+    }
+  }
+}

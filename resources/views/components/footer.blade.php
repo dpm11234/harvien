@@ -1,4 +1,4 @@
-<div class="harvee-footer py-lg-5">
+<div class="harvee-footer py-5">
     <div class="container position-relative">
         <div class="row harvee-footer-top">
             <div class="col-lg-3">
@@ -80,18 +80,18 @@
             </div>
         </div>
         <div class="row harvee-footer-bottom pt-4">
-            <div class="col-lg-7">
+            <div class="col-lg-7 col-md-12">
                 <div class="copy-right">
                     Copyright © 2019 <span>Gocodee</span>
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-md-12">
                 <div class="row">
                     <div class="col-lg-8 d-flex justify-content-between">
                         <img src="{{ asset('storage/images/payments.png') }}" alt="">
                     </div>
-                    <div class="col-lg-4">
-                        <div class="social text-right">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="social text-lg-right text-md-center mt-3 mt-lg-0">
                             <a href="#">
                                 <i class="fa fa-facebook-f"></i>
                             </a>

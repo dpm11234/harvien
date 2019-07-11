@@ -1,0 +1,24 @@
+@import'../abstracts/mixin';
+
+.harvee-footer {
+    background-color: #202020;
+
+    &-top {
+        .info>ul li {
+            h1 {
+                @include text(#fff, 1.3rem);
+            }
+
+            p {
+                @include text(#90969a, 1.3rem);
+            }
+        }
+
+        .widget {
+            h1 {
+                @include text(#fff, 1.6rem);
+            }
+        }
+    }
+}
+

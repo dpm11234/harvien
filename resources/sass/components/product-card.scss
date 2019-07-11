@@ -72,3 +72,13 @@
     border-radius: 0;
   }
 }
+
+//Responsive
+
+.harvee-product-card {
+  @media only screen and (max-width: 1024px) {
+    .harvee-card-header {
+      height: auto !important;
+    }
+  }
+}

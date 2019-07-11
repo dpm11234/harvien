@@ -32,3 +32,14 @@
     }
   }
 }
+
+//Responsive
+
+.harvee-carousel {
+  @media only screen and (max-width: 1024px) {
+    .harvee-slide {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

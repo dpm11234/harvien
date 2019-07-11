@@ -29,4 +29,39 @@
 
 .harvee-list-product {
   border-bottom: 2px solid #dee2e6;
+
+  .owl-carousel .owl-nav button.owl-next {
+    font-size: 70px !important;
+    position: absolute;
+    top: 100px;
+    right: -90px;
+
+    &:focus,
+    &:hover {
+      background: transparent;
+      color: #05131c;
+      outline: none !important;
+    }
+  }
+
+  .owl-carousel .owl-nav button.owl-prev {
+    font-size: 70px !important;
+    position: absolute;
+    top: 100px;
+    left: -90px;
+
+    &:focus,
+    &:hover {
+      background: transparent;
+      color: #05131c;
+      outline: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+      display: none;
+    }
+  }
 }

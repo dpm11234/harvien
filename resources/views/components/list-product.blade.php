@@ -6,12 +6,7 @@
                     <div class="row">
                         <div class="col-auto">
                             <button class="btn text-uppercase font-weight-bold  harvee-list-prod px-0 pb-1 m-0 active">
-                                featured products
-                            </button>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn text-uppercase font-weight-bold  harvee-list-prod px-0 pb-1 m-0">
-                                hot sales
+                               {{$title}}
                             </button>
                         </div>
                     </div>

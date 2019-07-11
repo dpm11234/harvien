@@ -1,13 +1,13 @@
 <div class="harvee-feature mb-4 py-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-3">
                             <i class="fa fa-star harvee-feature-icon"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h4 class="font-weight-bold text-uppercase">
                                 DEDICATED SERVICE
                             </h4>
@@ -21,13 +21,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-3">
                             <i class="fa fa-backward harvee-feature-icon"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h4 class="font-weight-bold text-uppercase">
                                 FREE RETURNS
                             </h4>
@@ -41,13 +41,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 col-3">
                             <i class="fa fa-paper-plane harvee-feature-icon"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h4 class="font-weight-bold text-uppercase">
                                 INTERNATIONAL SHIPPING
                             </h4>
@@ -77,6 +77,34 @@
                     shop now
                 </button>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="harvee-list-brand py-4 my-4" style="border-bottom: 1px solid #e5e8e8;">
+    <div class="container">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+               <img src="{{asset('storage/icon/ip.jpg')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/it.png')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/lo.jpg')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/op.png')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/rz.jpg')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/sony.png')}}" alt="">
+            </div>
+            <div class="item">
+               <img src="{{asset('storage/icon/ss.png')}}" alt="">
+            </div>          
         </div>
     </div>
 </div>

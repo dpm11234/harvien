@@ -97,4 +97,22 @@
     box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
     z-index: 20;
   }
+
+  .harvee-nav-mobile {
+    background: #ffffff !important;
+    position: fixed;
+    box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+
+    .navbar-toggler {
+      margin-top: 12px;
+      background: $harvee !important;
+    }
+
+    .navbar-toggler-icon {
+      background: #ffffff !important;
+      height: 5px;
+      display: block;
+    }
+  }
 }

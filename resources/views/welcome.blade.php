@@ -22,7 +22,7 @@
 
     <div class="cover-container d-flex h-100 mx-auto flex-column">
 
-        
+
         @yield('content')
         <!-- @yield('contact') -->
 

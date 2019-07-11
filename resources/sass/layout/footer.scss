@@ -1,24 +1,153 @@
-@import'../abstracts/mixin';
+@import "../abstracts/mixin";
+@import "../abstracts/variables";
 
 .harvee-footer {
-    background-color: #202020;
+  background-color: #202020;
 
-    &-top {
-        .info>ul li {
-            h1 {
-                @include text(#fff, 1.3rem);
-            }
+  &-top {
+    .info > ul li {
+      h1 {
+        @include text(#fff, 16px, bold);
+        margin-bottom: 0;
+      }
 
-            p {
-                @include text(#90969a, 1.3rem);
-            }
+      p {
+        @include text(#90969a, 14px, normal);
+        margin-bottom: 0;
+
+        a {
+          @include text(#90969a, 15px, normal);
+          text-decoration: none;
+          transition: all 0.3s;
+          &:hover {
+            color: #fff;
+          }
         }
-
-        .widget {
-            h1 {
-                @include text(#fff, 1.6rem);
-            }
-        }
+      }
     }
-}
 
+    .widget {
+      h1 {
+        @include text(#fff, 18px, bold);
+      }
+
+      ul li {
+        a {
+          @include text(#90969a, 15px, normal);
+          text-decoration: none;
+          transition: all 0.3s;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .widget-subscribe {
+      width: 100%;
+      h1 {
+        @include text(#fff, 18px, bold);
+      }
+
+      p {
+        @include text(#90969a, 15px, normal);
+      }
+      .submit-form {
+        > input {
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 1;
+          color: #6b7074;
+          border: 1px solid #ffffff;
+          background-color: #ffffff;
+          padding: 9px 16px;
+          margin-bottom: 1rem;
+          border-radius: 0;
+          &:focus {
+            outline: unset;
+          }
+        }
+
+        .input-email {
+          max-width: 480px;
+          width: 60%;
+        }
+
+        .btn-submit {
+          font-weight: bold;
+          color: #fff;
+          background-color: #393939;
+          border: unset !important;
+          transition: all 0.3s;
+          &:hover {
+            background-color: $harvee;
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    border-top: 1px solid #353a3e;
+
+    .copy-right {
+      color: #90969a;
+      @include text(#90969a, 15px, normal);
+      span {
+          color: #dee2e4;
+      }
+    }
+
+    .social {
+      a {
+        display: inline-block;
+        color: #fff;
+        background-color: #393939;
+        margin-bottom: 0;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        transition: all 0.3s;
+        > i {
+          color: #fff;
+          font-size: 14px;
+          line-height: 35px;
+        }
+        &:hover {
+          background-color: $harvee;
+        }
+      }
+    }
+  }
+
+  .banner {
+    position: absolute;
+    top: -4.3rem;
+    left: 15px;
+    .content {
+      position: relative;
+      background-color: $harvee;
+      // transform: translateY(-50%);
+      background-color: #7aa93c;
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      font-size: 22px !important;
+      font-family: "Shadows Into Light", cursive;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      z-index: 10;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: -1.3rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        content: "";
+        border-right: 1rem solid #6a9234;
+        border-top: 1.3rem solid transparent;
+      }
+    }
+  }
+}

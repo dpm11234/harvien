@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-const $ = require('jquery');
 //window.Vue = require('vue');
 
 /**

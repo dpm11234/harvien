@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
 const path = require('path');
 const sassPath = path.join(__dirname, 'resources/sass/' + '**/**.scss');
@@ -21,15 +20,18 @@ mix.browserSync({
     proxy: 'localhost:8000',
     notify: false,
 })
-.js('resources/js/app.js', 'public/js');
+    .js('resources/js/app.js', 'public/js')
+    // .extract([`node_modules/jquery/dist/jquery.min`, `axios`]);
 
 
 sassFiles.forEach(file => {
     let arr = file.split('/');
     let fileName = arr.pop();
-    if (fileName && fileName[0]== '_') return;
+    if (fileName && fileName[0] == '_') return;
     let begin = arr.indexOf('sass');
     arr.splice(0, begin + 1);
     let toFolder = 'public/css/' + arr.join('/');
-    mix = mix.sass(file, toFolder);
+    mix = mix.sass(file, toFolder).options({
+        processCssUrls: false
+    });
 });

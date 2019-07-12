@@ -1,0 +1,93 @@
+@import "../abstracts/variables";
+
+.harvee-product-detail-card {
+
+  .harvee-product-img {
+    display: block;
+    border: 1px solid #e8e8e8;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .harvee-card-content {
+    .harvee-product-name {
+      a {
+        color: #000;
+        font-size: 20px;
+      }
+    }
+    .harvee-product-rate {
+      i {
+        font-size: 12px;
+      }
+    }
+    p {
+      font-size: 15px;
+      color: #8a8a8a;
+    }
+    .harvee-product-price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .harvee-product-action {
+      display: flex;
+      .action-item {
+        height: 40px;
+        background-color: #f4f4f4;
+        border: 1px solid #d8d8d6;
+        // hover : #302e2a;
+      }
+      .add-wishlist {
+        transition: all 0.3s;
+        img {
+          width: 20px;
+        }
+        &:hover {
+          border-color: #302e2a;
+        }
+      }
+      .add-compare {
+        transition: all 0.3s;
+        &:hover {
+          border-color: #302e2a;
+        }
+        > a {
+          display: flex;
+          width: 40px;
+          height: 100%;
+          align-items: center;
+          transform: rotate(90deg);
+          i {
+            color: #000;
+            margin: auto;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      .add-cart {
+        transition: all 0.3s;
+        a {
+          display: block;
+          color: #000;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .harvee-card-content {
+      .add-cart {
+        background-color: $harvee;
+        color: #fff;
+      }
+    }
+  }
+}

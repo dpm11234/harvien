@@ -3,6 +3,7 @@
 <link href="{{ asset('css/pages/category.css') }}" rel="stylesheet">
 <link href="{{ asset('owl/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
 <link href="{{ asset('owl/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/components/product-detail-card.css') }}">
 @endsection
 @section('content')
 
@@ -192,7 +193,7 @@
                         sort
                     </div>
                     <div class="col-lg-12">
-                        danh muc san pham
+                        {{-- danh muc san pham --}}
                         @include('components.product-detail-card')
 
                     </div>

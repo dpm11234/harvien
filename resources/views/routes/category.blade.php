@@ -161,6 +161,8 @@
                     </div>
                     <div class="col-lg-12">
                         danh muc san pham
+                        @include('components.product-detail-card')
+
                     </div>
                     <div class="col-lg-12">
                         phan trang

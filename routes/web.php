@@ -27,7 +27,7 @@ Route::view('about', 'about');
 // Route::delete('customers/{customer}', 'CustomersController@destroy');
 
 
-Route::resource('customers', 'CustomersController');
+Route::resource('customers', 'CustomersController')->middleware('auth');
 
 Auth::routes();
 

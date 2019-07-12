@@ -21,7 +21,7 @@ mix.browserSync({
     notify: false,
 })
     .js('resources/js/app.js', 'public/js')
-    .extract(['jquery', 'bootstrap', `axios`]);
+    .extract(['jquery', 'bootstrap', 'axios']);
 
 
 sassFiles.forEach(file => {
@@ -35,3 +35,8 @@ sassFiles.forEach(file => {
         processCssUrls: false
     });
 });
+
+
+// if (mix.inProduction()) {
+    mix.version();
+// }

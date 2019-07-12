@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
 </head>
@@ -17,13 +18,6 @@
     <script src="{{ asset('/js/manifest.js')}}"></script>
     <script src="{{ asset('/js/vendor.js')}}"></script>
     <script src="{{ asset('/js/app.js')}}"></script>
-    {{-- @if (getenv('APP_ENV') === 'local')
-    <script id="__bs_script__">
-        //<![CDATA[
-          document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.6'><\/script>".replace("HOST", location.hostname));
-              //]]>
-    </script>
-    @endif --}}
 </body>
 
 </html>

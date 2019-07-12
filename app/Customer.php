@@ -11,6 +11,11 @@ class Customer extends Model
 
     protected $guarded = [];
 
+    protected $attributes = [
+        'active' => 1
+    ];
+
+
     public function scopeActive($query)
     {
         return $query->where('active', 1);

@@ -16,4 +16,8 @@ class Product extends Model
     public function scopeInactive($query) {
         return $query->where('active', 0);
     }
+
+    public function brand() {
+        return $this->belongsTo(Brand::class);
+    }
 }

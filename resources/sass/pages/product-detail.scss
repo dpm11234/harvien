@@ -19,6 +19,71 @@
     color: #f4f4f4;
   }
 
+  .user-review {
+    i {
+      color: $harvee;
+    }
+  }
+
+  .line {
+    border-bottom: 1px solid #8a8a8a;
+  }
+
+  .harvee-prod-infor {
+    a {
+      font-size: 17px;
+      font-weight: bold;
+      color: #222;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: $harvee solid 3px;
+        padding-bottom: 4px;
+        text-decoration: none;
+        color: $harvee;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  .btn-policy {
+    background-color: #f4f4f4;
+    border-radius: 0;
+    border: 1px solid #d8d8d6;
+    color: $harvee;
+  }
+
+  .thead-dark {
+    background: $harvee;
+    color: #d8d8d6;
+  }
+
+  .review-input {
+    input {
+      height: 40px;
+      color: $harvee;
+    }
+
+    textarea {
+      height: 150px;
+      color: $harvee;
+    }
+  }
+
+  table {
+    border: #d8d8d6 solid 1px;
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    display: none;
+  }
+
   .harvee-tags-gallery {
     img {
       vertical-align: middle;

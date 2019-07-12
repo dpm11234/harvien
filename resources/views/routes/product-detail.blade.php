@@ -38,7 +38,7 @@
                                             <div class="column m-1">
                                                 <img class="demo cursor" src="{{asset('storage/images/m3.jpg')}}" style="width:100%" onclick="currentSlide(3)" alt="">
                                             </div>
-                                         
+
                                         </div>
                                     </div>
                                 </div>
@@ -85,17 +85,158 @@
                                 </button>
                             </p>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="harvee-prod-infor">
+                                <ul class="nav nav-tabs">
+                                    <li class="mr-4"><a class="text-uppercase" data-toggle="tab" href="#menu1">description</a></li>
+                                    <li class="ml-4"><a class="text-uppercase" data-toggle="tab" href="#menu3">review</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="menu1" class="tab-pane fade mt-4">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                                    </div>
+                                    <div id="menu3" class="tab-pane fade mt-4">
+                                        <div class="user-review my-4 line">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 p-0">
+                                                        <h4 class="reviewer-name font-weight-bold">
+                                                            Edward Newgate
+                                                        </h4>
+                                                        <p>
+                                                            <i class="fa fa-star ml-1"></i>
+                                                            <i class="fa fa-star ml-1"></i>
+                                                            <i class="fa fa-star ml-1"></i>
+                                                            <i class="fa fa-star ml-1"></i>
+                                                            <i class="fa fa-star ml-1"></i>
+                                                        </p>
+                                                        <p class="reviewer-content">
+                                                            MacBook Pro elevates the notebook to a whole new level of performance and portability.
+                                                        </p>
+                                                        <p class="font-weight-bold">
+                                                            12:20:34 June 06, 2019
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review">
+                                            <form action="">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 p-0">
+                                                            <h4 class="text-uppercase">
+                                                                WRITE YOUR OWN REVIEW
+                                                            </h4>
+                                                            <p class="">
+                                                                How do you rate this product? *
+                                                            </p>
+                                                            <table class="table w-100">
+                                                                <thead class="thead-dark">
+                                                                    <tr class="text-center">
+                                                                        <th scope="col"></th>
+                                                                        <th scope="col">1 STAR</th>
+                                                                        <th scope="col">2 STARS</th>
+                                                                        <th scope="col">3 STARS</th>
+                                                                        <th scope="col">4 STARS</th>
+                                                                        <th scope="col">5 STARS</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row" class="p-2">Evaluate</th>
+                                                                        <td class="text-center"> <input type="radio" name="vehicle1" value="one-star"><br></td>
+                                                                        <td class="text-center"> <input type="radio" name="vehicle1" value="one-star"><br></td>
+                                                                        <td class="text-center"> <input type="radio" name="vehicle1" value="one-star"><br></td>
+                                                                        <td class="text-center"> <input type="radio" name="vehicle1" value="one-star"><br></td>
+                                                                        <td class="text-center"> <input type="radio" name="vehicle1" value="one-star"><br></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-lg-12 p-0 mt-4 review-input">
+                                                            <label for="nickname">Your name*</label>
+                                                            <input name="nickname" type="text" class="w-100 px-2">
+                                                        </div>
+                                                        <div class="col-lg-12 p-0 mt-4 review-input">
+                                                            <label for="title-review">Your title*</label>
+                                                            <input name="title-review" type="text" class="w-100 px-2">
+                                                        </div>
+                                                        <div class="col-lg-12 p-0 mt-4 review-input">
+                                                            <label for="content-review">Review*</label>
+                                                            <textarea name="content-review" type="text" class="w-100 px-2"></textarea>
+                                                        </div>
+                                                        <div class="col-lg-12 p-0 mt-4">
+                                                            <button type="submit" class="btn harvee-card-btn text-uppercase w-50">
+                                                                submit
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2">
-                dich vu
+            <div class="col-lg-2 p-1">
+                <p class="supplier-name">
+                    <span class="font-weight-bold">
+                        Supplier:
+                    </span> Apple
+                </p>
+                <p class="performance-prod">
+                    <span class="font-weight-bold">
+                        Formality:
+                    </span> New 100%
+                </p>
+                <p class="status-prod">
+                    <span class="font-weight-bold">
+                        Status:
+                    </span>Available
+                </p>
+                <div class="policy ">
+                    <a class="" href="">
+                        <button class="text-left mt-2 btn btn-policy text-uppercase w-100">
+                            <i class="fa fa-user"></i>
+                            Member privileges
+                        </button>
+                    </a>
+                    <a class="" href="">
+                        <button class="text-left mt-2 btn btn-policy text-uppercase w-100">
+                            <i class="fa fa-truck"></i>
+                            Shipment policy
+                        </button>
+                    </a>
+                    <a class="" href="">
+                        <button class="text-left mt-2 btn btn-policy text-uppercase w-100">
+                            <i class="fa fa-bitcoin"></i>
+                            100% MONEY
+                            BACK
+                        </button>
+                    </a>
+                    <a class="" href="">
+                        <button class="text-left my-2 btn btn-policy text-uppercase w-100">
+                            <i class="fa fa-hourglass-start"></i>
+                            24h support
+                        </button>
+                    </a>
+                </div>
+                <div class="ads-prp">
+                    <img class="w-100" src="{{asset('storage/images/qc.jpg')}}" alt="Banner">
+                    <img class="w-100 mt-2" src="{{asset('storage/images/qc2.png')}}" alt="Banner">
+                </div>
             </div>
-            <div class="col-lg-12" style="height: 300px;">
-
+            <div class="col-lg-12">
+                @include('components.list-product', ['title' => 'lastest product'])
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection
@@ -112,10 +253,10 @@
                 items: 1
             },
             600: {
-                items: 1
+                items: 3
             },
             1000: {
-                items: 1
+                items: 5
             }
         }
     })

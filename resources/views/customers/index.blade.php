@@ -14,6 +14,7 @@
     <div class="col-4">{{$customer->company->name}}</div>
     <div class="col-2">{{$customer->active}}</div>
 </div>
-
 @endforeach
+
+
 @endsection

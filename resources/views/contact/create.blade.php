@@ -26,6 +26,7 @@
         <label for="message">Message</label>
         <textarea name="message" cols="30" rows="10" class="form-control"> {{old('message')}}</textarea>
     </div>
+    @csrf
     <button class="btn btn-info" type="submit">Submit</button>
 </form>
 

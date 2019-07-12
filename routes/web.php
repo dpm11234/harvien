@@ -14,6 +14,7 @@
 Route::view('/', 'home');
 //#region contact
 Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
 
 //#endregion contact
 Route::view('about', 'about');

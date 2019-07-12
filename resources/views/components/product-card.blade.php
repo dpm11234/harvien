@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-lg-12">
                         <h4 class="harvee-card-prod-name text-center">
-                            <a href="#">
+                            <a href="category/product-detail">
                                 Sony AZ370-PRL
                             </a>
                         </h4>

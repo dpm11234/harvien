@@ -9,6 +9,7 @@
     "/css/layout/navbar.css": "/css/layout/navbar.css",
     "/css/pages/category.css": "/css/pages/category.css",
     "/css/pages/contact.css": "/css/pages/contact.css",
+    "/css/pages/product-detail.css": "/css/pages/product-detail.css",
     "/css/pages/test.css": "/css/pages/test.css",
     "/js/manifest.js": "/js/manifest.js",
     "/js/vendor.js": "/js/vendor.js"

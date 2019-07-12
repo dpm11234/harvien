@@ -13,4 +13,8 @@ class PageController extends Controller
     public function getCategory() {
         return view('routes.category');
     }
+
+    public function getProductDetail() {
+        return view('routes.product-detail');
+    }
 }

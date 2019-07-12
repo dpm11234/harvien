@@ -44,3 +44,4 @@ Route::get('home', function () {
     ]);
 })->name('home');
 Route::get('category', 'PageController@getCategory');
+Route::get('category/product-detail', 'PageController@getProductDetail');

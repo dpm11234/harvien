@@ -16,23 +16,30 @@ class ProductsController extends Controller
         // ];
         $products = Product::all();
 
-        return view('products', [
-            'products'=>$products
-        ]);
+        $activeProducts = Product::active()->get();
+        $inactiveProducts = Product::inactive()->get();
+
+        return view('products', compact('activeProducts', 'inactiveProducts'));
     }
 
     public function store() {
 
         $data = request()->validate([
-            'name'=>'required|min:3'
+            'name'=>'required|min:3',
+            'email'=>'required|email',
+            'active'=>'required'
         ]);
 
 
+        // $product = new Product();
+        // $product->name = request('name');
+        // $product->email = request('email');
+        // $product->active = request('active');
 
-        $product = new Product();
-        $product->name = request('name');
+        // $product->save();
 
-        $product->save();
+        Product::create($data);
+
         return back();
     }
 }

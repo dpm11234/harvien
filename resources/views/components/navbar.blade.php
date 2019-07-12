@@ -40,7 +40,7 @@
                     <a href="/home" class="nav-link ">Home</a>
                 </div>
                 <div class="col-lg-2 text-uppercase text-center">
-                    <a id="cate-1" class="nav-link ">Category
+                    <a href="/category" id="cate-1" class="nav-link ">Category
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <div id="cate-detail-1" class="harvee-category-detail">

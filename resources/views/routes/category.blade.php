@@ -16,17 +16,47 @@
                             <div class="card-header mt-2" id="fashion">
                                 <h5 class="mb-0 line">
                                     <button class="btn text-uppercase font-weight-bold collapsed py-4" data-toggle="collapse" data-target="#collapseFashion" aria-expanded="false" aria-controls="collapseFashion">
-                                        fashion
+                                        type
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseFashion" class="collapse line" aria-labelledby="fashion" data-parent="#accordion-1">
                                 <div class="card-body">
                                     <button class="btn d-block">
-                                        Man
+                                        Keyboard
                                     </button>
                                     <button class="btn d-block">
-                                        Woman
+                                        Headphone
+                                    </button>
+                                    <button class="btn d-block">
+                                        Mouse
+                                    </button>
+                                    <button class="btn d-block">
+                                        RAM
+                                    </button>
+                                    <button class="btn d-block">
+                                        Moniter
+                                    </button>
+                                    <button class="btn d-block">
+                                        SSD/HDD
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordion-4" class="harvee-accordion">
+                        <div class="card">
+                            <div class="card-header mt-2" id="brand">
+                                <h5 class="mb-0 line">
+                                    <button class="btn text-uppercase font-weight-bold collapsed py-4" data-toggle="collapse" data-target="#collapseBrand" aria-expanded="false" aria-controls="collapseBrand">
+                                        brand
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseBrand" class="collapse line" aria-labelledby="brand" data-parent="#accordion-4">
+                                <div class="card-body">
+                                    <button class="btn d-block">
+                                        Samsung
                                     </button>
                                 </div>
                             </div>
@@ -89,24 +119,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="accordion-4" class="harvee-accordion">
-                        <div class="card">
-                            <div class="card-header mt-2" id="brand">
-                                <h5 class="mb-0 line">
-                                    <button class="btn text-uppercase font-weight-bold collapsed py-4" data-toggle="collapse" data-target="#collapseBrand" aria-expanded="false" aria-controls="collapseBrand">
-                                        brand
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseBrand" class="collapse line" aria-labelledby="brand" data-parent="#accordion-4">
-                                <div class="card-body">
-                                    <button class="btn d-block">
-                                        Samsung
-                                    </button>
                                 </div>
                             </div>
                         </div>

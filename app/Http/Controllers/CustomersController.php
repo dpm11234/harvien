@@ -19,7 +19,7 @@ class CustomersController extends Controller
 
     public function create()
     {
-        $companies = Company::All();
+        $companies = Company::all();
         $customer  = new Customer();
         return view('customers.create', compact('customer', 'companies'));
     }
@@ -40,7 +40,7 @@ class CustomersController extends Controller
 
     public function edit(Customer $customer)
     {
-        $companies = Company::All();
+        $companies = Company::all();
         return view('customers.edit', compact('customer', 'companies'));
     }
 
@@ -49,6 +49,13 @@ class CustomersController extends Controller
         $data = $this->validateRequest();
         $customer->update($data);
         return redirect('customers/' . $customer->id);
+    }
+
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect('customers');
     }
 
     private function validateRequest()

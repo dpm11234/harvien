@@ -40,6 +40,7 @@ class Customer extends Model
         return [
             1 => 'Active',
             2 => 'Inactive',
+            3 => 'In-progress',
         ];
     }
 }

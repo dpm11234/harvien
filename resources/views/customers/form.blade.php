@@ -15,9 +15,15 @@
 <label for="active">Status</label>
 <div class="input-group">
     <select class="form-control" name="active">
-        <option value="1" {{$customer->active == 'Active' ? 'selected' : ''}}>Active</option>
-        <option value="2" {{$customer->active == 'Inactive' ? 'selected' : ''}}>Inactive</option>
+        @foreach ($customer->activeOptions() as $activeOptKey=> $activeOptValue)
+        <option value="{{$activeOptKey}}" {{$customer->active == $activeOptValue ? 'selected': ''}}>{{$activeOptValue}}
+        </option>
+        @endforeach
     </select>
+
+    @if($companyError = $errors->first('company_id'))
+    <small class="alert alert-danger">{{$companyError}}</small>
+    @endif
 </div>
 
 <div class="form-group">

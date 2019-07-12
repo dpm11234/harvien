@@ -3,8 +3,8 @@
 
 @section('content')
 <h3 class="w-100">Detail for {{$customer->name}}</h3>
-<p><a href="/customers/{{$customer->id}}/edit">Edit</a></p>
-<form action="/customers/{{$customer->id}}" method="POST">
+<p><a href="{{route('customers.edit', ['customer' => $customer])}}">Edit</a></p>
+<form action="{{route('customers.destroy', ['customer' => $customer])}}" method="POST">
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger">Delete</button>

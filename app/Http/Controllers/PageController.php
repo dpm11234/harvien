@@ -6,7 +6,15 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function getIndex() {
+    public function getContact() {
         return view('routes.contact');
+    }
+
+    public function getCategory() {
+        return view('routes.category');
+    }
+
+    public function getProductDetail() {
+        return view('routes.product-detail');
     }
 }

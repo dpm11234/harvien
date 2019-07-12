@@ -1,0 +1,212 @@
+@import "../abstracts/variables";
+
+.harvee-prod-detail {
+  .old-price {
+    font-weight: bold;
+    color: gray;
+    text-decoration-line: line-through;
+  }
+
+  .sale-price {
+    font-size: 20px;
+    color: $harvee;
+  }
+
+  .harvee-card-btn {
+    background-color: $harvee;
+    border-radius: 0;
+    border: 1px solid #d8d8d6;
+    color: #f4f4f4;
+  }
+
+  .user-review {
+    i {
+      color: $harvee;
+    }
+  }
+
+  .line {
+    border-bottom: 1px solid #8a8a8a;
+  }
+
+  .harvee-prod-infor {
+    a {
+      font-size: 17px;
+      font-weight: bold;
+      color: #222;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: $harvee solid 3px;
+        padding-bottom: 4px;
+        text-decoration: none;
+        color: $harvee;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  .btn-policy {
+    background-color: #f4f4f4;
+    border-radius: 0;
+    border: 1px solid #d8d8d6;
+    color: $harvee;
+  }
+
+  .thead-dark {
+    background: $harvee;
+    color: #d8d8d6;
+  }
+
+  .review-input {
+    input {
+      height: 40px;
+      color: $harvee;
+    }
+
+    textarea {
+      height: 150px;
+      color: $harvee;
+    }
+  }
+
+  table {
+    border: #d8d8d6 solid 1px;
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    display: none;
+  }
+
+  .harvee-tags-gallery {
+    img {
+      vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      height: 300px;
+      width: 100%;
+      display: none;
+
+      &:hover {
+        cursor: zoom-in;
+      }
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+
+      &:hover {
+        background-color: transparent !important;
+        color: black;
+      }
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 15px;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+      left: 15px;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+  }
+
+  .tiles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .tile {
+    position: relative;
+    float: left;
+    width: 33.333%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s ease-out;
+  }
+}

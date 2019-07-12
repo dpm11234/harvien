@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layout/navbar.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/layout/footer.css') }}">
     @yield('css')
     <!-- <script src="{{ asset('js/app.js')}}"></script> -->
     <!-- <link href="source/cover.css" rel="stylesheet"> -->
@@ -22,27 +23,17 @@
     <div class="cover-container d-flex h-100 mx-auto flex-column">
 
 
-
         @yield('content')
         <!-- @yield('contact') -->
 
-        <!-- @component('components.footer')
-        @endcomponent -->
+        @component('components.footer')
+        @endcomponent
     </div>
-
-
-
-    <script src="{{ asset('js/app.js') }}">
-    </script>
+    <script src="{{ asset('/js/manifest.js')}}"></script>
+    <script src="{{ asset('/js/vendor.js')}}"></script>
+    <script src="{{ asset('/js/app.js')}}"></script>
     @stack('script')
-    @if (getenv('APP_ENV') === 'local')
-    <script id="_bs_script_">
-        //<![CDATA[
-        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.6'><\/script>".replace("HOST", location.hostname));
-        //]]>
-    </script>
-    @endif
-    <script src="{{ asset('js/app.js') }}"></script>
+
     <script>
         $(document).ready(() => {
             let addToggle = (btn, queryTarget) => {
@@ -73,7 +64,6 @@
 
 
             var $nav = $("#nav-scroll");
-            $nav.css('transition', 'top 0.25s ease-out');
             var nonScroll = $('#non-scroll');
             var animated = false;
             $(window).scroll(() => {
@@ -81,20 +71,18 @@
                 if ($(window).scrollTop() - distance >= 0) {
                     if (!animated) {
                         animated = true;
+                        $nav.show();
                         $nav.css({
-                            display: 'block',
                             top: 0,
                         })
-                        console.log('show');
 
                     }
                 } else {
                     if (animated) {
+                        $nav.hide();
                         $nav.css({
-                            top: -50,
-                            display: 'none',
-                        })
-                        console.log('hide');
+                            top: -60
+                        }, )
 
                         animated = false;
                     }

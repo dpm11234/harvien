@@ -40,10 +40,10 @@
             <div class="col-lg-4 pt-4 harvee-infor-item">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2 harvee-icon">
+                        <div class="col-lg-2 col-3 harvee-icon">
                         <i class="fa fa-truck"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h5>
                                 FREE SHIPPING & RETURN
                             </h5>
@@ -57,10 +57,10 @@
             <div class="col-lg-4 pt-4 harvee-infor-item">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2 harvee-icon">
+                        <div class="col-lg-2 col-3 harvee-icon">
                         <i class="fa fa-bitcoin"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h5>
                             MONEY BACK GUARANTEE
                             </h5>
@@ -74,10 +74,10 @@
             <div class="col-lg-4 pt-4 harvee-infor-item">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-2 harvee-icon">
+                        <div class="col-lg-2 col-3 harvee-icon">
                         <i class="fa fa-history"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-lg-10 col-9">
                             <h5>
                             ONLINE SUPPORT 24/7
                             </h5>

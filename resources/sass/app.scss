@@ -1,13 +1,14 @@
-@import './base/reset';
+@import "./base/reset";
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Barlow&display=swap");
 
 // Variables
-@import 'abstracts/variables';
+@import "abstracts/variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "base/custom-bootstrap";
 
-// Font Awesome 
+// Font Awesome
 @import "~font-awesome/scss/font-awesome";
+

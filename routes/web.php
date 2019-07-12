@@ -36,7 +36,12 @@ Route::get('home', function () {
         ],
     ];
 
+    $title = '';
+
     return view('routes.home', [
-        'images' => $images
+        'images' => $images,
+        'title' => $title
     ]);
 })->name('home');
+Route::get('category', 'PageController@getCategory');
+Route::get('category/product-detail', 'PageController@getProductDetail');

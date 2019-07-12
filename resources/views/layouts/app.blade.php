@@ -25,6 +25,13 @@
 
 <body>
     <div id="app" class="container">
+        @if (session()->has('message'))
+            <div class="row">
+                <div class="alert alert-success">
+                   {{ session()->get('message') }}
+                </div>
+            </div>
+        @endif
         @include('nav')
         <main class="py-4">
             @yield('content')

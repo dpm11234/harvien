@@ -4,7 +4,7 @@
 <h1>Contact Us</h1>
 <p>Company Name</p>
 
-<form action="/contact" method="POST">
+<form action="{{route('contact.store')}}" method="POST">
     <div class="form-group">
         <label for="name">Name</label>
         <div class="input-group">

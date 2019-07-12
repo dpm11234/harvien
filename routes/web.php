@@ -13,11 +13,11 @@
 
 Route::view('/', 'home');
 //#region contact
-Route::get('contact', 'ContactFormController@create');
-Route::post('contact', 'ContactFormController@store');
+Route::get('contact', 'ContactFormController@create')->name('contact.create');
+Route::post('contact', 'ContactFormController@store')->name('contact.store');
 
 //#endregion contact
-Route::view('about', 'about');
+Route::view('about', 'about')->middleware('test');
 // Route::get('customers', 'CustomersController@index');
 // Route::get('customers/create', 'CustomersController@create');
 // Route::post('customers', 'CustomersController@store');
@@ -27,7 +27,7 @@ Route::view('about', 'about');
 // Route::delete('customers/{customer}', 'CustomersController@destroy');
 
 
-Route::resource('customers', 'CustomersController')->middleware('auth');
+Route::resource('customers', 'CustomersController');
 
 Auth::routes();
 

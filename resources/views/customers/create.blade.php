@@ -6,7 +6,7 @@ Add Customer
 <div class="row">
     <div class="col-12">
         <h1>Customers</h1>
-    <form action="/customers/{{$customer->id}}" method="POST" class="pb-5">
+    <form action="{{route('customers.store', ['customer' => $customer])}}" method="POST" class="pb-5">
             @csrf
             @include('customers.form')
             <button type="submit">Add Customer</button>

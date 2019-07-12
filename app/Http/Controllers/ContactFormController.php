@@ -23,8 +23,11 @@ class ContactFormController extends Controller
             'message'   => ['required'],
         ]);
 
+
         // Send An Email
 
-        Mail::to('test@test.com')->send(new ContactFormMail());
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
+        return redirect('/contact')
+            ->with('message', 'Thanks for your message.');
     }
 }

@@ -3,6 +3,7 @@
 @section('content')
 <h1>Contact Us</h1>
 <p>Company Name</p>
+
 <form action="/contact" method="POST">
     <div class="form-group">
         <label for="name">Name</label>

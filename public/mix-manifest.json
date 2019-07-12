@@ -2,7 +2,15 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/components/carousel.css": "/css/components/carousel.css",
+    "/css/components/features.css": "/css/components/features.css",
+    "/css/components/list-product.css": "/css/components/list-product.css",
+    "/css/components/product-card.css": "/css/components/product-card.css",
+    "/css/layout/footer.css": "/css/layout/footer.css",
     "/css/layout/navbar.css": "/css/layout/navbar.css",
+    "/css/pages/category.css": "/css/pages/category.css",
     "/css/pages/contact.css": "/css/pages/contact.css",
-    "/css/pages/test.css": "/css/pages/test.css"
+    "/css/pages/product-detail.css": "/css/pages/product-detail.css",
+    "/css/pages/test.css": "/css/pages/test.css",
+    "/js/manifest.js": "/js/manifest.js",
+    "/js/vendor.js": "/js/vendor.js"
 }

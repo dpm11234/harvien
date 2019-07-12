@@ -15,6 +15,10 @@ class Customer extends Model
         'active' => 1
     ];
 
+    public function getActiveAttribute($attribute)
+    {
+        return $this->activeOptions()[$attribute];
+    }
 
     public function scopeActive($query)
     {
@@ -26,16 +30,16 @@ class Customer extends Model
         return $query->where('active', 2);
     }
 
-    public function getActiveAttribute($attribute)
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function activeOptions()
     {
         return [
             1 => 'Active',
             2 => 'Inactive',
-        ][$attribute];
-    }
-
-    public function company()
-    {
-        return $this->belongsTo(Company::class);
+        ];
     }
 }

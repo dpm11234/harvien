@@ -19,16 +19,21 @@
         <h1>Product</h1>
     </div>
     @foreach ($products as $product)
-        <div class="col-12">
-            <span style="font-weight: bold">id</span>: {{ $product->id }}
+        <div class="col-2">
+            <span style="font-weight: bold">Id: </span>: {{ $product->id }}
         </div>
-        <div class="col-12">
-            <span style="font-weight: bold">name</span> {{ $product->name }}
+        <div class="col-4">
+            <span style="font-weight: bold">Name: </span> <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
         </div>
-        <div class="col-12">
-            <span style="font-weight: bold">brand</span> {{ $product->brand->name }}
+        <div class="col-4">
+            <span style="font-weight: bold">Brand: </span> {{ $product->brand->name }}
+        </div>
+        <div class="col-2">
+            <span style="font-weight: bold">Active: </span> {{ $product->active }}
         </div>
         <hr>
     @endforeach
+
+    b:ex
 </div>
 @endsection

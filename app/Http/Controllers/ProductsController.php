@@ -51,4 +51,8 @@ class ProductsController extends Controller
 
         return redirect('products');
     }
+
+    public function show($customer) {
+        dd($customer);
+    }
 }

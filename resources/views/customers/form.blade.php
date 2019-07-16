@@ -12,6 +12,10 @@
     <small class="alert alert-danger">{{$emailError}}</small>
     @endif
 </div>
+<label for="avatar">Avatar</label>
+<div class="input-group">
+    <input class="form-control" type="file" name="avatar" accept="image/jpeg,image/png">
+</div>
 <label for="active">Status</label>
 <div class="input-group">
     <select class="form-control" name="active">

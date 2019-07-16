@@ -4,5 +4,6 @@
    "phpformatter.composer": true,
    "files.associations": {
       "*.blade.php": "blade"
-   }
+   },
+   "editor.snippetSuggestions": "top",
 }

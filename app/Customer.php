@@ -30,6 +30,11 @@ class Customer extends Model
         return $query->where('active', 2);
     }
 
+    // public function getAvatarAttribute()
+    // {
+    //     return $this->avatar ? $this->avatar . 'jpg' : 'default-avatar.jpg';
+    // }
+
     public function company()
     {
         return $this->belongsTo(Company::class);

@@ -16,27 +16,36 @@ const sassFiles = glob.sync(sassPath);
 //  |
 //  */
 
-mix.browserSync({
-    proxy: 'localhost:8000',
-    notify: false,
-})
-    .js('resources/js/app.js', 'public/js')
-    .extract(['jquery', 'bootstrap', 'axios']);
+
+
+mix
+   // .webpackConfig({
+   //    output: {
+   //       filename: '[name].js',
+   //       chunkFilename: mix.inProduction() ? "[name].[chunkhash].js" : "[name].js",
+   //    }
+   // })
+   .browserSync({
+      proxy: 'localhost:8000',
+      notify: false,
+   })
+   .js('resources/js/app.js', 'public/js')
+   .extract(['jquery', 'bootstrap', 'axios']);
 
 
 sassFiles.forEach(file => {
-    let arr = file.split('/');
-    let fileName = arr.pop();
-    if (fileName && fileName[0] == '_') return;
-    let begin = arr.indexOf('sass');
-    arr.splice(0, begin + 1);
-    let toFolder = 'public/css/' + arr.join('/');
-    mix = mix.sass(file, toFolder).options({
-        processCssUrls: false
-    });
+   let arr = file.split('/');
+   let fileName = arr.pop();
+   if (fileName && fileName[0] == '_') return;
+   let begin = arr.indexOf('sass');
+   arr.splice(0, begin + 1);
+   let toFolder = 'public/css/' + arr.join('/');
+   mix = mix.sass(file, toFolder).options({
+      processCssUrls: false
+   });
 });
 
 
 // if (mix.inProduction()) {
-    mix.version();
+mix.version();
 // }

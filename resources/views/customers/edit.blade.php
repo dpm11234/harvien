@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="row col-12">
-        <form action="{{ route('customers.update', ['customer' => $customer]) }}" method="POST">
+        <form action="{{ route('customers.update', ['customer' => $customer]) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PATCH')
             @include('customers.form')

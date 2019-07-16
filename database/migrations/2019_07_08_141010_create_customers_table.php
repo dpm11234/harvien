@@ -18,7 +18,7 @@ class CreateCustomersTable extends Migration
             $table->unsignedInteger('company_id');
             $table->string('name');
             $table->string('email');
-            $table->string('avatar')->nullable(true);
+            $table->string('avatar')->default('noimage.svg');
             $table->integer('active');
             $table->timestamps();
         });

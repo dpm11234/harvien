@@ -10,7 +10,7 @@
    <button type="submit" class="btn btn-danger">Delete</button>
 </form>
 <p>{{$customer->avatar}}</p>
-<img src="{{asset('storage/customerpics/'.$customer->avatar)}}" alt="customer profile">
+<img src="{{asset('uploads/avatars/'.$customer->avatar)}}" alt="customer profile">
 <div class="row">
    <div class="col-12">
       <p><strong>Name</strong> {{$customer->name}}</p>

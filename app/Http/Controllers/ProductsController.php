@@ -52,7 +52,19 @@ class ProductsController extends Controller
         return redirect('products');
     }
 
-    public function show($customer) {
-        dd($customer);
+    public function show(Product $product) {
+        // $product = Product::where('id', $product)->firstOrFail();
+
+        return view('products.show', compact('product'));
+    }
+
+    public function edit(Product $product) {
+      $brands = Brand::all();
+
+      return view('products.edit', compact('product', 'brands'));
+    }
+
+    public function update(Product $product) {
+
     }
 }

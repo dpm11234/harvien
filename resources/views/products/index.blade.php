@@ -33,7 +33,5 @@
         </div>
         <hr>
     @endforeach
-
-    b:ex
 </div>
 @endsection

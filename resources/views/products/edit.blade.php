@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-<h1>Add Products</h1>
+<h1>Edit Products</h1>
 
 
 <div>
@@ -14,9 +14,10 @@
 
 
 
-<form action="/products" method="POST">
+<form action="/products/{{ $product->id }}" method="POST">
+    @method('PATCH')
     @include('products.form')
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-primary">Save</button>
 
 </form>
 

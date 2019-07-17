@@ -19,9 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('intro');
             $table->string('thump')->default('');
             $table->double('price');
-            $table->string('image-0');
-            $table->string('image-1');
-            $table->string('image-2');
+            $table->integer('images_id');
+            $table->integer('brand_id');
             $table->string('description'); // |
             $table->timestamps();
         });

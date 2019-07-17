@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <div class="harvee-tags-gallery mt-2">
+                               <div class="harvee-tags-gallery mt-2">
                                 <div class="container">
                                     <div class="mySlides tile" data-scale="1.8" data-image="{{asset('storage/images/m1.jpg')}}">
                                     </div>

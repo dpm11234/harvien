@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <a href="home">
+                    <a href="/home">
                         <img class="harvee-logo" src="{{asset('storage/images/logo.png')}}" alt=""></a>
 
                 </div>
@@ -27,6 +27,16 @@
                                     <i class="fa fa-cart-plus harvee-cart"></i>
                                 </button>
                                 <div id="cart-detail" class="harvee-cart-detail">
+                                    <div class="container">
+                                        <div class="row">
+                                            <a href="/my-cart">
+                                        
+                                                <button class="btn btn-success w-100 m-2">
+                                                    Check-out!
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -124,6 +134,13 @@
                     <i class="fa fa-cart-plus harvee-cart"></i>
                 </button>
                 <div id="cart-detail-2" class="harvee-cart-detail">
+                    <div class="container">
+                        <div class="row">
+                            <button class="btn btn-success w-100">
+                                Check-out!
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

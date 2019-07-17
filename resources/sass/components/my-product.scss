@@ -1,0 +1,26 @@
+.harvee-my-product {
+  .line {
+    border-bottom: 1px solid #8a8a8a;
+  }
+
+  .product-size {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #8a8a8a;
+  }
+}
+
+.harvee-summary {
+  border: 1px solid #8a8a8a;
+  background: #eeeeee;
+
+  .line {
+    border-bottom: 1px solid #8a8a8a;
+  }
+
+  button {
+      &:focus {
+          box-shadow: none;
+      }
+  }
+}

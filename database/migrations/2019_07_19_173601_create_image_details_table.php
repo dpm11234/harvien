@@ -14,7 +14,7 @@ class CreateImageDetailsTable extends Migration
     public function up()
     {
         Schema::create('image_details', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->text('images_url');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');

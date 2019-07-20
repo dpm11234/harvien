@@ -17,11 +17,6 @@ class Product extends Model
         return $this->hasMany('App\ImageDetail', 'product_id', 'id');
     }
 
-    public function getImagesAttribute()
-    {
-        return $this->imageDetails();
-    }
-
     public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class);

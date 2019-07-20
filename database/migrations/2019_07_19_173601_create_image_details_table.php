@@ -15,10 +15,11 @@ class CreateImageDetailsTable extends Migration
     {
         Schema::create('image_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('images_url');
+            $table->text('image_url');
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
+            // Keys
+            // $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

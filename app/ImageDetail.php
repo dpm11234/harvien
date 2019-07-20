@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ImageDetail extends Model
 {
-    protected $visible = ['name'];
+    protected $visible = ['image_url'];
     public function product()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\Product', 'id', 'product_id');
     }
 }

@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Resources\ProductResource;
 use App\Product;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
 use JWTAuth;
 use Validator;
+use App\Http\Resources\Product\ProductCollection;
 
 class ProductController extends ApiController
 {
@@ -26,7 +26,7 @@ class ProductController extends ApiController
 
         $products = Product::paginate(15);
 
-        return ProductResource::collection($products);
+        return ProductCollection::collection($products);
     }
 
     /**

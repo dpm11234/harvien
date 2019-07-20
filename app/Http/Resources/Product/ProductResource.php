@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,7 +15,7 @@ class ProductResource extends JsonResource
     public function toArray($request)
     {
         $images = $this->imageDetails()->get()->map(function ($image) {
-            return $image->name;
+            return $image->image_url;
         });
         $images = array_flatten($images);
         return array_merge(parent::toArray($request), [

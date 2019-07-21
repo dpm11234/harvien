@@ -21,9 +21,9 @@ class ProductCollection extends JsonResource
             'price'     => $this->price,
             'discount'  => $this->discount,
             'thumbnail' => $this->thumbnail,
-            // 'href'      => [
-            //     // 'link'  => $this->url,
-            // ]
+            'href'      => [
+                'link'  => $this->url,
+            ]
         ];
     }
 }

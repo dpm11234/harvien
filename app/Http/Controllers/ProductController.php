@@ -85,8 +85,11 @@ class ProductController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
+        if(!$product = (Product::find($id))) {
+            return $this->respondNotFound('Product not found!');
+        }
         return $this->respond(new ProductResource($product));
     }
 

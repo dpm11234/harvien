@@ -14,10 +14,11 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
-        $images = $this->imageDetails()->get()->map(function ($image) {
+        $images = $this->imageDetails()->get()
+        ->map(function ($image) {
             return $image->image_url;
-        });
-        $images = array_flatten($images);
+        })
+        ->toArray();
         return array_merge(parent::toArray($request), [
             'images' => $images,
         ]);

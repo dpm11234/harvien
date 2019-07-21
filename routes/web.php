@@ -70,3 +70,7 @@ Route::get('my-cart', 'PageController@getMyCart', function () {
         ]);
 });
 Route::get('category/product-detail', 'PageController@getProductDetail');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

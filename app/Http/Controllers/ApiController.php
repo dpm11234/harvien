@@ -51,19 +51,23 @@ class ApiController extends Controller{
      * @param $data
      * @return mixed
      */
-    protected function respondWithPagination(Paginator $paginate, $data, $message){
+    protected function respondWithPagination(Paginator $paginate, $data){
+        $all = $paginate->toArray();
+        // $links = $link['links'];
         $data = array_merge($data, [
             'paginator' => [
-                'total_count'  => $paginate->total(),
-                'total_pages' => ceil($paginate->total() / $paginate->perPage()),
-                'current_page' => $paginate->currentPage(),
-                'limit' => $paginate->perPage(),
+                'total_count'   => $paginate->total(),
+                'total_pages'   => ceil($paginate->total() / $paginate->perPage()),
+                'current_page'  => $paginate->currentPage(),
+                'per_page'      => $paginate->perPage(),     
+                'links'         => 
+                    $all['next_page_url']
             ]
         ]);
         return $this->respond([
             'status' => 'success',
             'status_code' => Res::HTTP_OK,
-            'message' => $message,
+            // 'message' => $message,
             'data' => $data
         ]);
     }

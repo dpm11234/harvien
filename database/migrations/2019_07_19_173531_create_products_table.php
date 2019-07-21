@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('slug');
-            $table->string('discount');
+            $table->integer('discount');
             $table->text('thumbnail');
             $table->text('intro');
             $table->text('review');

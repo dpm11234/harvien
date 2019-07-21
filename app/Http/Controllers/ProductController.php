@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
-use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
-use JWTAuth;
 use Validator;
 use App\Http\Resources\Product\ProductCollection;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +16,7 @@ class ProductController extends ApiController
 
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index', 'show');
+        $this->middleware('auth:api')->except('show');
     }
     /**
      * Display a listing of the resource.

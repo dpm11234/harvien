@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use JWTAuth;
 use Response;
-use App\Repository\Transformers\UserTransformer;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 use \Illuminate\Http\Response as Res;
 use Validator;
-use Tymon\JWTAuth\Exceptions\JWTException;
 
 class UserController extends ApiController
 {
@@ -18,10 +17,8 @@ class UserController extends ApiController
      * @var \App\Repository\Transformers\UserTransformer
      * */
     protected $userTransformer;
-    public function __construct(userTransformer $userTransformer)
-    {
-        $this->userTransformer = $userTransformer;
-    }
+    public function __construct()
+    { }
     /**
      * @description: Api user authenticate method
      * @author: Adelekan David Aderemi
@@ -30,23 +27,35 @@ class UserController extends ApiController
      */
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
 
-        $token = null;
-        try {
-            if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 400);
-            }
-        } catch (JWTException $e) {
-            return response()->json(['error' => 'could_not_create_token'], 500);
+        $credentials = request(['email', 'password']);
+
+        if (!auth()->attempt($credentials)) {
+            return $this->respond([
+                'status'        => 'error',
+                'status_code'   => 401,
+                'message'       => 'Unauthorized'
+            ]);
         }
-
+       $user = auth()->user();
+        $accessToken = $user->createToken('authToken')->accessToken;
 
         return $this->respond([
-            'status' => 'success',
-            'status_code' => $this->getStatusCode(),
-            'message' => 'Login successful!',
-            'data'    => JWTAuth::user(),
+            'status'        => 'success',
+            'status_code'   => $this->getStatusCode(),
+            'message'       => 'Login successful!',
+            'data'          => [
+                'user'      => $user,
+                'token' =>  $accessToken,
+                'token_type' => 'Bearer',
+                // 'expires_at' => Carbon::parse(
+                //     $tokenResult->token->expires_at
+                // )->toDateTimeString()
+            ],
             // 'token' => $token,
         ]);
     }
@@ -57,7 +66,6 @@ class UserController extends ApiController
         if (!$token = JWTAuth::attempt($credentials)) {
             return $this->respondWithError("User does not exist!");
         }
-        $user = JWTAuth::toUser($token);
         // $user->api_token = $token;
         // $user->save();
         return $this->respond([
@@ -79,24 +87,29 @@ class UserController extends ApiController
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
-            'password_confirmation' =>'required|same:password',
+            'password_confirmation' => 'required|same:password',
         ]);
 
+
+
         if ($validator->fails()) {
-            return response()->json($validator->errors()->toJson(), 400);
+            return $this->respondValidationError(
+                'Values are not valid',
+                $validator->errors()
+            );
         }
 
-        $user = User::create([
+        User::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => \Hash::make($request->get('password')),
         ]);
 
-        $token = JWTAuth::fromUser($user);
-        // $user->api_token = $token;
-        // $user->save();
-
-        return response()->json(compact('user', 'token'), 201);
+        return $this->respond([
+            'status' => 'success',
+            'status_code' => 201,
+            'message' => 'Successfully created user!',
+        ]);
     }
     /**
      * @description: Api user logout method

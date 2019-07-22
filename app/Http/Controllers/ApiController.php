@@ -92,7 +92,7 @@ class ApiController extends Controller{
         ], $data);
         return response($data, $status, $headers);
     }
-    public function respondData($data, int $status, $headers = [])
+    public function respondData($data, int $status=Res::HTTP_OK, $headers = [])
     {
         return $this->respond(['data' => $data], $status, $headers);
     }

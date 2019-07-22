@@ -111,9 +111,13 @@ class ProductController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request,int $id)
     {
-        //
+        if(!$product = Product::find($id)) {
+            return $this->respondNotFound('Product not found!');
+        }
+        $product->update($request->validated());
+        return $this->respondData(new ProductResource($product));
     }
 
     /**
@@ -124,26 +128,10 @@ class ProductController extends ApiController
      */
     public function destroy($id)
     {
-        //
-    }
-
-    private function validateProductRequest(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name'      => 'required|string|max:255',
-            'brand_id'  => 'required|numeric|exists:brands,id',
-            'user_id'   => 'required|numeric|exists:users,id',
-            'slug'      => 'required|string',
-            'price'     => 'required|string',
-            'discount'  => 'required|numeric',
-            'tag'       => 'required|string',
-            'status'    => 'required|numeric',
-            'intro'     => 'required|string',
-            'review'    => 'required|string',
-        ]);
-        if ($validator->fails()) {
-            return $this->respondValidationError('Validation errors', $validator->errors());
+        if(!$product = Product::find($id)) {
+            return $this->respondNotFound('Product not found!');
         }
-        return $validator;
+        $product->destroy($id);
+        return $this->respond(['message'=> 'Product deleted']);
     }
 }

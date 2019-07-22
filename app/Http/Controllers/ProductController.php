@@ -15,7 +15,7 @@ class ProductController extends ApiController
 
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index','show');
+        $this->middleware('auth:api')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.
@@ -26,43 +26,33 @@ class ProductController extends ApiController
     {
         $limit = 15;
         $products = new Product;
-        if (request()->has('limit')) { 
+        if (request()->has('limit')) {
             $limit = request('limit');
         }
 
-        if(request()->has('brands')) {
+        if (request()->has('brands')) {
             $products = $products->whereIn('brand_id', request('brands'));
         }
 
-        if(request()->has('from')) {
+        if (request()->has('from')) {
             $products = $products->where('price', '>=', request('from'));
         }
 
-        if(request()->has('to')) {
+        if (request()->has('to')) {
             $products = $products->where('price', '<=', request('to'));
         }
 
-        
+
 
         // $products = Product::paginate($limit);
         $proPagination = $products->paginate($limit);
         $proCollect   = ProductCollection::collection($proPagination);
-        
+
         return $this->respondWithPagination(
-            $proPagination, 
+            $proPagination,
             ['products' => $proCollect]
         );
         // return  ProductResource::collection($products);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
     }
 
     /**
@@ -87,22 +77,11 @@ class ProductController extends ApiController
      */
     public function show($id)
     {
-        if(!$product = (Product::find($id))) {
+        if (!$product = (Product::find($id))) {
             return $this->respondNotFound('Product not found!');
         }
         return $this->respondData(new ProductResource($product), Res::HTTP_OK);
     }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.
@@ -111,9 +90,9 @@ class ProductController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request,int $id)
+    public function update(ProductRequest $request, int $id)
     {
-        if(!$product = Product::find($id)) {
+        if (!$product = Product::find($id)) {
             return $this->respondNotFound('Product not found!');
         }
         $product->update($request->validated());
@@ -128,10 +107,10 @@ class ProductController extends ApiController
      */
     public function destroy($id)
     {
-        if(!$product = Product::find($id)) {
+        if (!$product = Product::find($id)) {
             return $this->respondNotFound('Product not found!');
         }
-        $product->destroy($id);
-        return $this->respond(['message'=> 'Product deleted']);
+        $product->delete();
+        return $this->respond(['message' => 'Product deleted']);
     }
 }

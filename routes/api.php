@@ -8,7 +8,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // List Products
-Route::get('products', 'ProductController@index')->name('products.index');
+// Route::get('products', 'ProductController@index')->name('products.index');
 
 // // List Single Product
 // Route::get('products/{product}', 'ProductController@show')->name('products.show');
@@ -17,7 +17,7 @@ Route::get('products', 'ProductController@index')->name('products.index');
 // Route::post('products', 'ProductController@store');
 
 // // Update new Product
-// Route::patch('products', 'ProductController@store');
+// Route::patch('products', 'ProductController@update');
 
 // // Delete Product
 

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $hidden = [ 'slug' ,'updated_at'];
+    protected $hidden = ['updated_at'];
+    protected $guarded  = [];
     public function brand()
     {
         return $this->belongsTo(Brand::class);

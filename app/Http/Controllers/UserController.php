@@ -36,27 +36,22 @@ class UserController extends ApiController
 
         if (!auth()->attempt($credentials)) {
             return $this->respond([
-                'status'        => 'error',
-                'status_code'   => 401,
                 'message'       => 'Unauthorized'
-            ]);
+            ], Res::HTTP_UNAUTHORIZED);
         }
        $user = auth()->user();
-        $accessToken = $user->createToken('authToken')->accessToken;
+        $tokenResult = $user->createToken('authToken');
 
         return $this->respond([
-            'status'        => 'success',
-            'status_code'   => $this->getStatusCode(),
             'message'       => 'Login successful!',
             'data'          => [
                 'user'      => $user,
-                'token' =>  $accessToken,
+                'token' =>  $tokenResult->accessToken,
                 'token_type' => 'Bearer',
-                // 'expires_at' => Carbon::parse(
-                //     $tokenResult->token->expires_at
-                // )->toDateTimeString()
+                'expires_at' => Carbon::parse(
+                    $tokenResult->token->expires_at
+                )->toDateTimeString()
             ],
-            // 'token' => $token,
         ]);
     }
 
@@ -106,10 +101,8 @@ class UserController extends ApiController
         ]);
 
         return $this->respond([
-            'status' => 'success',
-            'status_code' => 201,
             'message' => 'Successfully created user!',
-        ]);
+        ],Res::HTTP_CREATED);
     }
     /**
      * @description: Api user logout method

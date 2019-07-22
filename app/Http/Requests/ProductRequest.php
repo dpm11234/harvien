@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
-{
+{ 
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -29,10 +29,24 @@ class ProductRequest extends FormRequest
             'slug'      => ['required',],
             'price'     => ['required',],
             'discount'  => ['required',],
-            'tag   '    => ['required',],
+            'tag'       => ['required',],
             'status'    => ['required',],
             'intro'     => ['required',],
-            'review'     => ['required',],
+            'review'    => ['required',],
+        ];
+    }
+
+     /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email is required!',
+            'name.required' => 'Name is required!',
+            'password.required' => 'Password is required!'
         ];
     }
 }

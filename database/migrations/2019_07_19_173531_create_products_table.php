@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('slug');
-            $table->string('discount');
-            $table->text('thumbnail');
+            $table->integer('discount');
+            $table->text('thumbnail')->default('https://lorempixel.com/300/300/?51994');
             $table->text('intro');
             $table->string('tag');
             $table->decimal('price', 13, 2);

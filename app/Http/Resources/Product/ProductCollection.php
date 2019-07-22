@@ -15,12 +15,14 @@ class ProductCollection extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'        => $this->id,
+            'brand_id'  => $this->brand_id,
             'name'      => $this->name,
             'price'     => $this->price,
             'discount'  => $this->discount,
             'thumbnail' => $this->thumbnail,
             'href'      => [
-                'link'  => route('products.show', $this->id),
+                'link'  => $this->url,
             ]
         ];
     }

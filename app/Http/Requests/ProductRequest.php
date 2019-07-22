@@ -60,7 +60,7 @@ class ProductRequest extends FormRequest
      */
     public function failedValidation(Validator $validator)
     {
-        //write your bussiness logic here otherwise it will give same old JSON response
+        //write your business logic here otherwise it will give same old JSON response
         throw new HttpResponseException(response()->json([
             'status'      => 'error',
             'status_code' => 422,

@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->string('discount');
             $table->text('thumbnail');
             $table->text('intro');
-            $table->text('review');
             $table->string('tag');
             $table->decimal('price', 13, 2);
             $table->integer('status');

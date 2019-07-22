@@ -99,7 +99,7 @@ class ApiController extends Controller{
     public function respond($data,int $status = Res::HTTP_OK, $headers = []){
         $statusStr = 'success';
         
-        if($status >= 300) {
+        if($status >= 400) {
             $statusStr = 'error';
         }
         $data = array_merge([

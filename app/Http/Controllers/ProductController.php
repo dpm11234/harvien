@@ -71,25 +71,10 @@ class ProductController extends ApiController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name'      => 'required|string|max:255',
-            'brand_id'  => 'required|numeric|exists:brands,id',
-            'user_id'   => 'required|numeric|exists:users,id',
-            'slug'      => 'required|string',
-            'price'     => 'required|string',
-            'discount'  => 'required|numeric',
-            'tag'       => 'required|string',
-            'status'    => 'required|numeric',
-            'intro'     => 'required|string',
-            'review'    => 'required|string',
-        ]);
-        if ($validator->fails()) {
-            return $this->respondValidationError('Validation errors', $validator->errors());
-        }
 
-        $product = Product::create($validator->validated());
+        $product = Product::create($request->validated());
 
         return $this->respondCreated('Created Product Successfully', $product);
     }

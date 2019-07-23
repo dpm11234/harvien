@@ -14,7 +14,11 @@ class CreateRamsTable extends Migration
     public function up()
     {
         Schema::create('rams', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('category_id');
+            $table->string('buss');
+            $table->integer('memory');
+            $table->string('type');
             $table->timestamps();
         });
     }

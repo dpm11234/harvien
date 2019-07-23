@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->text('content');
+            $table->integer('rating');
             $table->timestamps();
 
             //Constraint

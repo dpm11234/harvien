@@ -23,6 +23,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route::delete('products', 'ProductController@destroy');
 
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'ProductController@getAddToCart',
+    'as'   => 'Product.addToCart',
+]);
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+});
+
 Route::group(['middleware' => 'cors'], function () {
     Route::post('/login', 'UserController@authenticate');
     Route::get('/logout/{api_token}', 'UserController@logout');
@@ -30,5 +42,6 @@ Route::group(['middleware' => 'cors'], function () {
     
     Route::apiResource('products', 'ProductController');
     Route::apiResource('brands', 'BrandController');
+    // Route::get('products/addtocart/{id}', 'ProductController@addToCart');
     // Route::get('products/{product}/{slug?}', 'ProductController@show');
 });

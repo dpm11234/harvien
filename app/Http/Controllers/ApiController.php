@@ -62,7 +62,7 @@ class ApiController extends Controller{
                     $all['next_page_url']
             ]
         ]);
-        return $this->respondData($data, Res::HTTP_OK);
+        return $this->respond($data, Res::HTTP_OK);
     }
 
     /**

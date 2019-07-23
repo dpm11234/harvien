@@ -16,7 +16,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'slug'          => $faker->text(20),
         'discount'      => $faker->numberBetween(0, 50),
         // 'description'   => $faker->text(100),
-        'review'        => $faker->sentence(10),
+        // 'review'        => $faker->sentence(10),
         'tag'           => $faker->text(15),
         'thumbnail'     => $faker->imageUrl(300,300),
         'price'         => $faker->numberBetween(100000, 5000000),

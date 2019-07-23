@@ -10,7 +10,7 @@ class BrandController extends ApiController
 
     public function __construct()
     {
-        $this->middleware('api:auth')->except('index', 'show');
+        $this->middleware('auth:api')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.
@@ -19,7 +19,8 @@ class BrandController extends ApiController
      */
     public function index()
     {
-        return $this->respondData(['brands' => Brand::all()]);
+        $brand = Brand::all();
+        return $this->respond(compact('brand'));
     }
     /**
      * Display the specified resource.
@@ -32,7 +33,23 @@ class BrandController extends ApiController
         if(!$brand = (Brand::find($id))) {
             return $this->respondNotFound('Brand not found!');
         }
-        return $this->respondData($brand);
+        return $this->respond(compact('brand'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $brandData = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+        $brand = Brand::create($brandData);
+
+        return $this->respondCreated('Created Product Successfully', compact('brand'));
     }
 
     /**

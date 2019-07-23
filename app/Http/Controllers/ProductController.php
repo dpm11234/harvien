@@ -9,6 +9,10 @@ use \Illuminate\Http\Response as Res;
 use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
+use App\Http\Resources\Cart\CartResource;
+use App\Cart;
 
 class ProductController extends ApiController
 {
@@ -58,7 +62,7 @@ class ProductController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Requests\ProductRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductRequest $request)
@@ -80,13 +84,13 @@ class ProductController extends ApiController
         if (!$product = (Product::find($id))) {
             return $this->respondNotFound('Product not found!');
         }
-        return $this->respondData(new ProductResource($product), Res::HTTP_OK);
+        return $this->respond(['product' => new ProductResource($product)], Res::HTTP_OK);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Requests\ProductRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -96,7 +100,7 @@ class ProductController extends ApiController
             return $this->respondNotFound('Product not found!');
         }
         $product->update($request->validated());
-        return $this->respondData(new ProductResource($product));
+        return $this->respondData(['product' => new ProductResource($product)]);
     }
 
     /**
@@ -112,5 +116,27 @@ class ProductController extends ApiController
         }
         $product->delete();
         return $this->respond(['message' => 'Product deleted']);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  App\Requests\ProductRequest  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getAddToCart(Request $request, $id)
+    {
+        // $request->session()->put('cart', null);
+
+        if (!$product = Product::find($id)) {
+            return $this->respondNotFound('Product not found!');
+        }
+        $oldCart    = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart       = new Cart($oldCart);
+        $cart->add(new ProductCollection($product), $id);
+
+        $request->session()->put('cart', $cart);
+        return  $this->respond(['cart' => $cart]);
     }
 }

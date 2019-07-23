@@ -19,5 +19,13 @@ class UserTableSeeder extends Seeder
         $admin->password = \Hash::make('password');
         $admin->save();
         $admin->roles()->attach($role_admin);
+
+        $admin2 = new App\User;
+
+        $admin2->name= 'Admin Name';
+        $admin2->email= 'd2d@gmail.com';
+        $admin2->password = \Hash::make('password');
+        $admin2->save();
+        $admin2->roles()->attach($role_admin);
     }
 }

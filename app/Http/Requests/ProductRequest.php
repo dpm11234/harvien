@@ -35,7 +35,6 @@ class ProductRequest extends FormRequest
             'tag'       => 'required|string',
             'status'    => 'required|numeric',
             'intro'     => 'required|string',
-            'review'    => 'required|string',
         ];
     }
 

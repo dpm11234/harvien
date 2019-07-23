@@ -26,11 +26,12 @@ class ProductController extends ApiController
      */
     public function index()
     {
-        $limit = 15;
         $products = new Product;
-        if (request()->has('limit')) {
-            $limit = request('limit');
-        }
+        $limit = request('limit', 15);
+
+        // if(request()->has('type')) {
+        //     $products 
+        // }
 
         if (request()->has('brands')) {
             $products = $products->whereIn('brand_id', request('brands'));
@@ -47,8 +48,8 @@ class ProductController extends ApiController
 
 
         // $products = Product::paginate($limit);
-        $proPagination = $products->paginate($limit);
-        $proCollect   = ProductCollection::collection($proPagination);
+        $proPagination  = $products->paginate($limit);
+        $proCollect     = ProductCollection::collection($proPagination);
 
         return $this->respondWithPagination(
             $proPagination,
@@ -68,7 +69,7 @@ class ProductController extends ApiController
 
         $product = Product::create($request->validated());
 
-        return $this->respondCreated('Created Product Successfully', $product);
+        return $this->respondCreated('Created Product Successfully',['product' => $product] );
     }
 
     /**

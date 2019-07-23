@@ -38,10 +38,9 @@ class ApiController extends Controller{
         return $this;
     }
     public function respondCreated($message, $data=null){
-        $res = [
+        $res = array_merge([
             'message'   => $message, 
-            'data'      => $data
-        ];
+        ], $data);
         return $this->respond($res, Res::HTTP_CREATED);
     }
     /**

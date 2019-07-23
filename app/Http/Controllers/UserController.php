@@ -39,19 +39,17 @@ class UserController extends ApiController
                 'message'       => 'Unauthorized'
             ], Res::HTTP_UNAUTHORIZED);
         }
-       $user = auth()->user();
+        $user = auth()->user();
         $tokenResult = $user->createToken('authToken');
 
         return $this->respond([
             'message'       => 'Login successful!',
-            'data'          => [
-                'user'      => $user,
-                'token' =>  $tokenResult->accessToken,
-                'token_type' => 'Bearer',
-                'expires_at' => Carbon::parse(
-                    $tokenResult->token->expires_at
-                )->toDateTimeString()
-            ],
+            'user'      => $user,
+            'token' =>  $tokenResult->accessToken,
+            'token_type' => 'Bearer',
+            'expires_at' => Carbon::parse(
+                $tokenResult->token->expires_at
+            )->toDateTimeString(),
         ]);
     }
 
@@ -102,7 +100,7 @@ class UserController extends ApiController
 
         return $this->respond([
             'message' => 'Successfully created user!',
-        ],Res::HTTP_CREATED);
+        ], Res::HTTP_CREATED);
     }
     /**
      * @description: Api user logout method

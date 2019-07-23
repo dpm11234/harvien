@@ -11,6 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return redirect()->route('home');
-// });
+Route::get('/{path?}', function() {
+   return view('index');
+});

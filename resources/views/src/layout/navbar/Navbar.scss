@@ -1,0 +1,118 @@
+// @import "../abstracts/variables";
+
+.harvee-navbar {
+  background: #ffffff;
+
+  button {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .harvee-search-bar {
+    input {
+      background: #eeeeee;
+      color: blue;
+      height: 40px;
+      width: 90%;
+      border-radius: 5px;
+      border: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      position: relative;
+      right: 30px;
+    }
+  }
+
+  .harvee-logo {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 60%;
+  }
+
+  .harvee-logo-scroll {
+      width: 170px;
+  }
+
+  .harvee-hotline {
+    border-right: 1px #eeeeee solid;
+  }
+
+  .harvee-cart {
+    font-size: 40px;
+    color: blue;
+  }
+
+  .harvee-cart-detail {
+    position: absolute;
+    right: 50px;
+    height: 500px;
+    width: 300px;
+    display: none;
+    background: white;
+    box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    border-top-width: 2px;
+    z-index: 1;
+    border-top-color: blue;
+  }
+
+  .harvee-category-detail {
+    position: absolute;
+    right: -15%;
+    height: 300px;
+    width: 300px;
+    display: none;
+    background: white;
+    box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    border-top-width: 2px;
+    border-top-color: blue;
+    z-index: 1;
+  }
+
+  .harvee-nav-link {
+    background: #eeeeee;
+    a {
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 700;
+      color: blue !important;
+    }
+  }
+
+  .harvee-navbar-scroll {
+    a {
+      font-size: 15px !important;
+    }
+    background: #ffffff !important;
+    box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+
+  .harvee-nav-mobile {
+    background: #ffffff !important;
+    position: fixed;
+    box-shadow: 0 29px 28px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+
+    .navbar-toggler {
+      margin-top: 12px;
+      background: blue !important;
+    }
+
+    .navbar-toggler-icon {
+      background: #ffffff !important;
+      height: 5px;
+      display: block;
+    }
+  }
+}

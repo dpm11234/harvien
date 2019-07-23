@@ -26,8 +26,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'cors'], function () {
     Route::post('/login', 'UserController@authenticate');
     Route::get('/logout/{api_token}', 'UserController@logout');
-    
-    Route::resource('products', 'ProductController');
     Route::post('/register', 'UserController@register');
+    
+    Route::apiResource('products', 'ProductController');
+    Route::apiResource('brands', 'BrandController');
     // Route::get('products/{product}/{slug?}', 'ProductController@show');
 });

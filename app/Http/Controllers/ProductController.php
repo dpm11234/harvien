@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Product;
-use Validator;
+// use Validator;
 use \Illuminate\Http\Response as Res;
 use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
@@ -15,7 +15,7 @@ class ProductController extends ApiController
 
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index','show');
+        $this->middleware('auth:api')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.
@@ -26,43 +26,33 @@ class ProductController extends ApiController
     {
         $limit = 15;
         $products = new Product;
-        if (request()->has('limit')) { 
+        if (request()->has('limit')) {
             $limit = request('limit');
         }
 
-        if(request()->has('brands')) {
+        if (request()->has('brands')) {
             $products = $products->whereIn('brand_id', request('brands'));
         }
 
-        if(request()->has('from')) {
+        if (request()->has('from')) {
             $products = $products->where('price', '>=', request('from'));
         }
 
-        if(request()->has('to')) {
+        if (request()->has('to')) {
             $products = $products->where('price', '<=', request('to'));
         }
 
-        
+
 
         // $products = Product::paginate($limit);
         $proPagination = $products->paginate($limit);
         $proCollect   = ProductCollection::collection($proPagination);
-        
+
         return $this->respondWithPagination(
-            $proPagination, 
+            $proPagination,
             ['products' => $proCollect]
         );
         // return  ProductResource::collection($products);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
     }
 
     /**
@@ -71,25 +61,10 @@ class ProductController extends ApiController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name'      => 'required|string|max:255',
-            'brand_id'  => 'required|numeric|exists:brands,id',
-            'user_id'   => 'required|numeric|exists:users,id',
-            'slug'      => 'required|string',
-            'price'     => 'required|string',
-            'discount'  => 'required|numeric',
-            'tag'       => 'required|string',
-            'status'    => 'required|numeric',
-            'intro'     => 'required|string',
-            'review'    => 'required|string',
-        ]);
-        if ($validator->fails()) {
-            return $this->respondValidationError('Validation errors', $validator->errors());
-        }
 
-        $product = Product::create($validator->validated());
+        $product = Product::create($request->validated());
 
         return $this->respondCreated('Created Product Successfully', $product);
     }
@@ -102,22 +77,11 @@ class ProductController extends ApiController
      */
     public function show($id)
     {
-        if(!$product = (Product::find($id))) {
+        if (!$product = (Product::find($id))) {
             return $this->respondNotFound('Product not found!');
         }
         return $this->respondData(new ProductResource($product), Res::HTTP_OK);
     }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.
@@ -126,9 +90,13 @@ class ProductController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, int $id)
     {
-        //
+        if (!$product = Product::find($id)) {
+            return $this->respondNotFound('Product not found!');
+        }
+        $product->update($request->validated());
+        return $this->respondData(new ProductResource($product));
     }
 
     /**
@@ -139,26 +107,10 @@ class ProductController extends ApiController
      */
     public function destroy($id)
     {
-        //
-    }
-
-    private function validateProductRequest(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name'      => 'required|string|max:255',
-            'brand_id'  => 'required|numeric|exists:brands,id',
-            'user_id'   => 'required|numeric|exists:users,id',
-            'slug'      => 'required|string',
-            'price'     => 'required|string',
-            'discount'  => 'required|numeric',
-            'tag'       => 'required|string',
-            'status'    => 'required|numeric',
-            'intro'     => 'required|string',
-            'review'    => 'required|string',
-        ]);
-        if ($validator->fails()) {
-            return $this->respondValidationError('Validation errors', $validator->errors());
+        if (!$product = Product::find($id)) {
+            return $this->respondNotFound('Product not found!');
         }
-        return $validator;
+        $product->delete();
+        return $this->respond(['message' => 'Product deleted']);
     }
 }

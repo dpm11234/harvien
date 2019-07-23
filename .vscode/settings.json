@@ -1,5 +1,23 @@
 {
     "php-cs-fixer.executablePathWindows": "C:/Users/deoye/AppData/Roaming/Composer/vendor/bin/php-cs-fixer.bat",
     "phpformatter.composer": true,
-    "scss.scannerExclude": [".git", "**/node_modules/*/{*,!(bootstrap)}", "**/bower_components"]
+    "scss.scannerExclude": [
+        ".git",
+        "**/node_modules/*/{*,!(bootstrap)}",
+        "**/bower_components"
+    ],
+    "cSpell.words": [
+        "Adelekan",
+        "Aderemi",
+        "Autoloaded",
+        "Barryvdh",
+        "Laravel",
+        "Tymon",
+        "UNPROCESSABLE",
+        "encrypter",
+        "firstname",
+        "fullname",
+        "lastname",
+        "paginator"
+    ]
 }

@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('tag');
             $table->decimal('price', 13, 2);
             $table->integer('status');
+            $table->integer('count_sell')->default(0);
             $table->timestamps();
             
             // Constraint

@@ -36,6 +36,11 @@ class Product extends Model
         return str_slug($this->name);
     }
 
+    public function getDiscPriceAttribute(): float
+    {
+        return (round($this->price * (100-$this->discount) / 100));
+    }
+
     public function getUrlAttribute()
     {
         return action('ProductController@show', [$this->id]);

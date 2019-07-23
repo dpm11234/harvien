@@ -10,8 +10,6 @@ use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
-use App\Http\Resources\Cart\CartResource;
 use App\Cart;
 
 class ProductController extends ApiController

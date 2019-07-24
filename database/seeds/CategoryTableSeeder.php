@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-class BrandTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -12,6 +11,6 @@ class BrandTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Brand::class, 10)->create();
+        factory(App\Category::class, 5)->create();
     }
 }

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use \Illuminate\Http\Response as Res;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * Class ApiController
@@ -105,7 +106,8 @@ class ApiController extends Controller{
             'status' => $statusStr,
             'status_code' => $status,
         ], $data);
-        return response($data, $status, $headers);
+        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
+        // return response($data, $status, $headers);
     }
     /**
      * @param mixed $data

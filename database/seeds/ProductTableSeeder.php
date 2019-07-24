@@ -11,8 +11,8 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Product::class, 10)->create()->each(function($product){
-            $product->images()->saveMany(factory(App\ImageDetail::class, 4)->make());
+        factory(App\Product::class, 200)->create()->each(function($product){
+            $product->imageDetails()->saveMany(factory(App\ImageDetail::class, 4)->make());
         });
     }
 }

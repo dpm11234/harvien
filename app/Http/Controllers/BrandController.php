@@ -10,7 +10,7 @@ class BrandController extends ApiController
 
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index', 'show');
+        $this->middleware('auth:api')->except('index', 'show', 'getAddToCart');
     }
     /**
      * Display a listing of the resource.

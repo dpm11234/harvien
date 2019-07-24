@@ -53,21 +53,6 @@ class UserController extends ApiController
         ]);
     }
 
-    private function _login($email, $password)
-    {
-        $credentials = ['email' => $email, 'password' => $password];
-        if (!$token = JWTAuth::attempt($credentials)) {
-            return $this->respondWithError("User does not exist!");
-        }
-        // $user->api_token = $token;
-        // $user->save();
-        return $this->respond([
-            'status' => 'success',
-            'status_code' => $this->getStatusCode(),
-            'message' => 'Login successful!',
-            // 'data' => $this->userTransformer->transform($user)
-        ]);
-    }
     /**
      * @description: Api user register method
      * @author: Adelekan David Aderemi
@@ -108,21 +93,9 @@ class UserController extends ApiController
      * @param: null
      * @return: Json String response
      */
-    public function logout($api_token)
+    public function logout(Request $request)
     {
-        try {
-            $user = JWTAuth::toUser($api_token);
-            $user->api_token = NULL;
-            $user->save();
-            JWTAuth::setToken($api_token)->invalidate();
-            $this->setStatusCode(Res::HTTP_OK);
-            return $this->respond([
-                'status' => 'success',
-                'status_code' => $this->getStatusCode(),
-                'message' => 'Logout successful!',
-            ]);
-        } catch (JWTException $e) {
-            return $this->respondInternalError("An error occurred while performing an action!");
-        }
+        $request->user()->token()->revoke();
+        return $this->respond(['message' => 'Logout successfully']);
     }
 }

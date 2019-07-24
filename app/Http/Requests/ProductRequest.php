@@ -26,15 +26,16 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return  [
-            'name'      => 'required|string|max:255',
-            'brand_id'  => 'required|numeric|exists:brands,id',
-            'user_id'   => 'required|numeric|exists:users,id',
-            'slug'      => 'required|string',
-            'price'     => 'required|string',
-            'discount'  => 'required|numeric',
-            'tag'       => 'required|string',
-            'status'    => 'required|numeric',
-            'intro'     => 'required|string',
+            'name'          => 'required|string|max:255',
+            'brand_id'      => 'required|numeric|exists:brands,id',
+            'user_id'       => 'required|numeric|exists:users,id',
+            'category_id'   => 'required|exists:categories,id',
+            'price'         => 'required|numeric',
+            'discount'      => 'required|numeric',
+            'tag'           => 'required|string',
+            'status'        => 'required|numeric',
+            'intro'         => 'required|string',
+            "thumbnail"      => '',
         ];
     }
 

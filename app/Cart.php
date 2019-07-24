@@ -19,12 +19,18 @@ class Cart
     }
   }
 
-  public function add($item, $id)
+  public function add($item, $id, $qty = null)
   {
+    if(!is_null($qty) && $qty == 0) {
+      unset($this->items[$id]);
+      return;
+    };
+
     $storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
     if ($this->items) {
       if (array_key_exists($id, $this->items)) {
         $storedItem = $this->items[$id];
+        // print_r($storedItem);
       }
     }
     $storedItem['qty']++;
@@ -34,5 +40,13 @@ class Cart
     $this->totalQty++;
     $this->totalPrice        += $item->price;
     $this->totalDiscPrice    += $item->discPrice;
+  }
+
+  public function toJson()
+  {
+    $json = clone $this;
+    
+    $json->items = array_values($this->items);
+    return $json;
   }
 }

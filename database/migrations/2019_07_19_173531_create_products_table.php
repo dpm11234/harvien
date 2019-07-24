@@ -20,8 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('name');
             $table->integer('discount');
-            //$table->text('thumbnail')->default('https://lorempixel.com/300/300/?51994');
-            $table->text('thumbnail');
+            $table->text('thumbnail')->default('https://lorempixel.com/300/300/?51994');
             $table->text('intro');
             $table->string('tag');
             $table->decimal('price', 13, 2);

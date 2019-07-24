@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use \Illuminate\Http\Response as Res;
 use Validator;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends ApiController
 {
@@ -18,7 +19,9 @@ class UserController extends ApiController
      * */
     protected $userTransformer;
     public function __construct()
-    { }
+    {
+        $this->middleware('auth:api')->only('logout');
+    }
     /**
      * @description: Api user authenticate method
      * @author: Adelekan David Aderemi
@@ -44,9 +47,9 @@ class UserController extends ApiController
 
         return $this->respond([
             'message'       => 'Login successful!',
-            'user'      => $user,
-            'token' =>  $tokenResult->accessToken,
-            'token_type' => 'Bearer',
+            'user'          => $user,
+            'token'         => $tokenResult->accessToken,
+            'token_type'    => 'Bearer',
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at
             )->toDateTimeString(),
@@ -80,7 +83,7 @@ class UserController extends ApiController
         User::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'password' => \Hash::make($request->get('password')),
+            'password' => bcrypt($request->get('password')),
         ]);
 
         return $this->respond([
@@ -95,7 +98,11 @@ class UserController extends ApiController
      */
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        $userTokens = Auth::user()->tokens();
+        Auth::user()->token()->revoke();
+        // foreach($userTokens as $token) {
+        //     $token->revoke();   
+        // }
         return $this->respond(['message' => 'Logout successfully']);
     }
 }

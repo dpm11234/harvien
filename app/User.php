@@ -6,6 +6,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\Passport;
 
 
 
@@ -84,23 +85,8 @@ class User extends Authenticatable
         return $this->hasRole('admin');
     }
 
-    // /**
-    //  * Get the identifier that will be stored in the subject claim of the JWT.
-    //  *
-    //  * @return mixed
-    //  */
-    // public function getJWTIdentifier()
+    // public function tokens()
     // {
-    //     return $this->getKey();
-    // }
-
-    // /**
-    //  * Return a key value array, containing any custom claims to be added to the JWT.
-    //  *
-    //  * @return array
-    //  */
-    // public function getJWTCustomClaims()
-    // {
-    //     return [];
+    //     return $this->hasMany(Passport::tokenModel(), 'user_id')->orderBy('created_at', 'desc');
     // }
 }

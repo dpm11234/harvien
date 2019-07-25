@@ -91,7 +91,7 @@ class CartController extends ApiController
         $cart = $request->session()->get('cart');
         $cart = $cart?$cart:new Cart();
         $cart->remove($id);
-        $cart = new Cart($cart);
+        $cart = (new Cart($cart))->toJson();
         return $this->respond(compact('cart'));
     }
 }

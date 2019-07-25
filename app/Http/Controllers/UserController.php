@@ -54,6 +54,7 @@ class UserController extends ApiController
                 $tokenResult->token->expires_at
             )->toDateTimeString(),
         ]);
+      
     }
 
     /**

@@ -44,7 +44,9 @@ Route::group(['middleware' => 'cors'], function () {
     Route::apiResource('brands', 'BrandController');
     Route::group(['prefix' => 'cart'], function () {
         Route::get('/', 'CartController@index')->name('cart.index');
+        Route::post('/', 'CartController@store')->name('cart.store');
         Route::get('/{id}', 'CartController@addToCart')->name('cart.addToCart');
+        Route::delete('/{id}', 'CartController@destroy')->name('cart.destroy');
         // Route::put('/{id}', 'CartController@updateCart')->name('cart.updateCart');
         
         // Route::get('/{id}', ['use' => 'CartController@addToCart', 'as' => 'cart.getAddToCart']);

@@ -99,7 +99,8 @@ class ProductController extends ApiController
             return $this->respondNotFound('Product not found!');
         }
         $product->update($request->validated());
-        return $this->respondData(['product' => new ProductResource($product)]);
+        $product = new ProductResource(($product));
+        return $this->respond(compact('product'));
     }
 
     /**

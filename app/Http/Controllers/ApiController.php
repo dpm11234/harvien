@@ -106,7 +106,7 @@ class ApiController extends Controller{
             'status' => $statusStr,
             'status_code' => $status,
         ], $data);
-        return response()->json($data, 200, $headers, JSON_UNESCAPED_SLASHES);
+        return response()->json($data, Res::HTTP_OK, $headers, JSON_UNESCAPED_SLASHES);
         // return response($data, $status, $headers);
     }
     /**

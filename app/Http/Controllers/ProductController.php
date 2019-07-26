@@ -33,8 +33,8 @@ class ProductController extends ApiController
         //     $products 
         // }
 
-        if (request()->has('brands')) {
-            $products = $products->whereIn('brand_id', request('brands'));
+        if (request()->has('brand')) {
+            $products = $products->where('brand_id', request('brand'));
         }
 
         if (request()->has('from')) {
@@ -55,7 +55,6 @@ class ProductController extends ApiController
             $proPagination,
             ['products' => $proCollect]
         );
-        // return  ProductResource::collection($products);
     }
 
     /**
@@ -83,7 +82,7 @@ class ProductController extends ApiController
         if (!$product = (Product::find($id))) {
             return $this->respondNotFound('Product not found!');
         }
-        return $this->respond(['product' => new ProductResource($product)], Res::HTTP_OK);
+        return $this->respond(compact('product'));
     }
 
     /**
@@ -117,26 +116,4 @@ class ProductController extends ApiController
         $product->delete();
         return $this->respond(['message' => 'Product deleted']);
     }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  App\Requests\Request  $request
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function getAddToCart(Request $request, $id)
-    // {
-    //     $request->session()->put('cart', null);
-
-    //     if (!$product = Product::find($id)) {
-    //         return $this->respondNotFound('Product not found!');
-    //     }
-    //     $oldCart    = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-    //     $cart       = new Cart($oldCart);
-    //     $cart->add(new ProductCollection($product), $id);
-
-    //     $request->session()->put('cart', $cart);
-    //     return  $this->respond(['cart' => $cart->toJson()]);
-    // }
 }

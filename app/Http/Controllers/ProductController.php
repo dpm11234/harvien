@@ -11,6 +11,7 @@ use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Cart;
+use Lanin\Laravel\ApiDebugger\Debugger;
 
 class ProductController extends ApiController
 {
@@ -68,7 +69,7 @@ class ProductController extends ApiController
     {
 
         $product = Product::create($request->validated());
-
+        $product = new ProductResource($product);
         return $this->respondCreated('Created Product Successfully',compact('product'));
     }
 

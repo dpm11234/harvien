@@ -58,8 +58,7 @@ class ApiController extends Controller{
                 'total_pages'   => ceil($paginate->total() / $paginate->perPage()),
                 'current_page'  => $paginate->currentPage(),
                 'per_page'      => $paginate->perPage(),     
-                'links'         => 
-                    $all['next_page_url']
+                'links'         => $all['next_page_url']
             ]
         ]);
         return $this->respond($data, Res::HTTP_OK);

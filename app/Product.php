@@ -15,6 +15,7 @@ class Product extends Model
         'discount'  => 'float', 
         'price'     => 'float',
         'created_at'=> 'datetime:Y-m-d',
+        'thumbnail' => 'nullable',
     ];
     public function brand()
     {
@@ -49,5 +50,10 @@ class Product extends Model
     public function getUrlAttribute()
     {
         return action('ProductController@show', [$this->id]);
+    }
+
+    public function getThumbnailAttribute($value)
+    {
+        return '/storage/uploads/images/' . $value;
     }
 }

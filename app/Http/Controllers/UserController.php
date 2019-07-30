@@ -4,24 +4,18 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use \Illuminate\Http\Response as Res;
 use Validator;
-use Illuminate\Support\Facades\Session;
 
 class UserController extends ApiController
 {
-    /**
-     * @var \App\Repository\Transformers\UserTransformer
-     * */
-    protected $userTransformer;
     public function __construct()
     {
         $this->middleware('auth:api')->only('logout');
     }
+
     /**
      * @description: Api user authenticate method
      * @author: Adelekan David Aderemi
@@ -50,7 +44,7 @@ class UserController extends ApiController
             'user'          => $user,
             'token'         => $tokenResult->accessToken,
             'token_type'    => 'Bearer',
-            'expires_at' => Carbon::parse(
+            'expires_at'    => Carbon::parse(
                 $tokenResult->token->expires_at
             )->toDateTimeString(),
         ]);
@@ -97,10 +91,10 @@ class UserController extends ApiController
      * @param: null
      * @return: Json String response
      */
-    public function logout(Request $request)
+    public function logout()
     {
-        $userTokens = Auth::user()->tokens();
         Auth::user()->token()->revoke();
+        // $userTokens = Auth::user()->tokens();
         // foreach($userTokens as $token) {
         //     $token->revoke();   
         // }

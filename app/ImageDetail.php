@@ -11,4 +11,9 @@ class ImageDetail extends Model
     {
         return $this->belongsTo('App\Product', 'id', 'product_id');
     }
+
+    public function getImageUrl()
+    {
+        return storage_path('public/uploads/images/').$this->imageUrl;
+    }
 }

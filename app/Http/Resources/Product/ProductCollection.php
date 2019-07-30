@@ -21,7 +21,7 @@ class ProductCollection extends JsonResource
             'price'     => $this->price,
             'discount'  => $this->discount,
             'discPrice' => $this->discPrice,
-            'thumbnail' => $this->thumbnail,
+            'thumbnail' => $this->thumbnailUrl,
             'href'      => [
                 'link'  => $this->url,
             ]

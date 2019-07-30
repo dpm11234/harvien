@@ -52,6 +52,15 @@ Route::group(['middleware' => 'cors'], function () {
         // Route::get('/{id}', ['use' => 'CartController@addToCart', 'as' => 'cart.getAddToCart']);
         // Route::put('/', ['use' => 'CartController@updateCart', 'as' => 'cart.updateCart']);
     });
+
+    // Route::resource('image', 'ImageController');
+    Route::post('image', 'ImageController@store');
+
+    // Route::group(['prefix' => 'image'], function () {
+    //     Route::get('\{image}', 'ImageController@show');
+    //     Route::post('', 'ImageController@store');
+    //     Route::resource('image', '');
+    // });
     // Route::get('products/addtocart/{id}', 'ProductController@addToCart');
     // Route::get('products/{product}/{slug?}', 'ProductController@show');
 });

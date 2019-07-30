@@ -165,10 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
-
-        // Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +231,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         
         'Debugger' => Lanin\Laravel\ApiDebugger\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

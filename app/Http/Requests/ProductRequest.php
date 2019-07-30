@@ -35,7 +35,9 @@ class ProductRequest extends FormRequest
             'tag'           => 'required|string',
             'status'        => 'required|numeric',
             'intro'         => 'required|string',
-            "thumbnail"      => '',
+            "thumbnail"     => '',
+            'images'        => 'required|array',
+            'images.*.id'   => 'required|string|distinct',
         ];
     }
 

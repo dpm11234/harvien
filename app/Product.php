@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $hidden   = ['updated_at'];
-    protected $guarded  = [];
+    protected $guarded  = ['images'];
     protected $casts    = [
         'user_id'   => 'integer', 
         'brand_id'  => 'integer',
@@ -17,6 +17,11 @@ class Product extends Model
         'created_at'=> 'datetime:Y-m-d',
         'thumbnail' => 'nullable',
     ];
+
+    protected $appends = [
+        'images',
+    ];
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
@@ -55,5 +60,20 @@ class Product extends Model
     public function getThumbnailAttribute($value)
     {
         return '/storage/uploads/images/' . $value;
+    }
+
+    public function getImagesAttribute()
+    {
+        return $this->imageDetails()->get()->map(function ($image) {return $image->image_url;});
+    }
+
+    public function setImagesAttribute($images)
+    {
+        foreach ($images as $image) {
+            $imageModel = new ImageDetail;
+            $imageModel->product_id = $this->id;
+            $imageModel->image_url = $image['id'];
+            $imageModel->save();
+        }
     }
 }

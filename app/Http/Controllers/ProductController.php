@@ -68,7 +68,9 @@ class ProductController extends ApiController
     public function store(ProductRequest $request)
     {
 
-        $product = Product::create($request->validated());
+        $validated = $request->validated();
+        $product = Product::create($validated);
+        $product->images = $validated['images'];
         $product = new ProductResource($product);
         return $this->respondCreated('Created Product Successfully',compact('product'));
     }

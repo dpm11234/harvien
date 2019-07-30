@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRamsTable extends Migration
+class CreateDrivesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateRamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rams', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('drives', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('category_id');
-            $table->string('buss');
-            $table->string('device');
-            $table->integer('capacity');
             $table->string('type');
+            $table->string('style')->nullable();
+            $table->integer('capacity')->unsigned();
+            $table->integer('read-speed')->unsigned();
+            $table->integer('write-speed')->unsigned();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateRamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rams');
+        Schema::dropIfExists('drives');
     }
 }

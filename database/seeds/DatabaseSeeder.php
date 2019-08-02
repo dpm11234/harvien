@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CategoryTableSeeder::class,
             BrandTableSeeder::class,
             ProductTableSeeder::class,
+            
             // ImageDetailTableSeeder::class,
         ]);
     }

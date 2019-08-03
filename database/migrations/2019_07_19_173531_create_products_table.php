@@ -26,7 +26,8 @@ class CreateProductsTable extends Migration
             $table->decimal('price', 13, 2);
             $table->integer('status');
             $table->integer('count_sell')->default(0);
-            $table->timestamps();        
+            $table->text('description');
+            $table->timestamps();
             // Constraint
             // $table->foreign('user_id')->references('id')->on('users');
             // $table->foreign('brand_id')->references('id')->on('brands');
